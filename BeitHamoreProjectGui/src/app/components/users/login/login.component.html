@@ -1,0 +1,22 @@
+	
+	<div class="container">
+		<div id="content">
+			<form (submit)="login()">
+				<h1>התחברות לאזור האישי</h1>
+				<div>
+					<input type="text"  placeholder="tz" [(ngModel)]="user.tz" required="" name="username" />
+				</div>
+				<div>
+					<input type="password" [(ngModel)]="user.passwordSHA256" placeholder="Password" required="" name="password" />
+				</div>
+				<div>
+					<input type="submit" value="לכניסה" />
+					<a [routerLink]="">Lost your password?</a>
+					<a [routerLink]="['/register']">Register</a>
+				</div>
+			</form><!-- form -->
+			<div class="button">
+			<!-- <a href="#">Download source file</a> -->
+			</div><!-- button -->
+		</div><!-- content -->
+	</div><!-- container -->

@@ -1,0 +1,22 @@
+
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    direction: rtl;
+    color: black;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+  
+  .example-container form {
+    margin-bottom: 20px;
+  }
+  
+  .example-container form > * {
+    margin: 5px 0;
+  }
+  
+  
+  

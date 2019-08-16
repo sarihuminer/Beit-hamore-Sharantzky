@@ -1,0 +1,11 @@
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\DTO\bin\sari\DTO.dll.config
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\DTO\bin\sari\DTO.dll
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\DTO\bin\sari\DAL.dll
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\DTO\bin\sari\EntityFramework.dll
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\DTO\bin\sari\EntityFramework.SqlServer.dll
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\DTO\bin\sari\DAL.dll.config
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\DTO\bin\sari\EntityFramework.xml
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\DTO\bin\sari\EntityFramework.SqlServer.xml
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\DTO\obj\sari\DTO.csprojResolveAssemblyReference.cache
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\DTO\obj\sari\DTO.csproj.CoreCompileInputs.cache
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\DTO\obj\sari\DTO.dll

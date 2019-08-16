@@ -1,0 +1,38 @@
+<div class="md-col-3" *ngFor="let route of routes;let index=index">
+<!-- <mat-icon>library_books</mat-icon>  -->
+
+<!-- (click)="ee(route.routeCode)" -->
+<div class='container' >
+       <div
+  
+    [ngClass]="{'card-left': index%3==1, 'card-right':index%3==2 , 'card-top':index%3==0}"
+      >
+        <div class='card-image'>
+          <!-- <img src={{route.img}}> -->
+         
+         <img [src]="DomSanitizer.bypassSecurityTrustUrl(route.img)">
+        </div>
+        <div class='card-text'>
+            <p>{{route.routeName}}</p> 
+            <button  (click)="getSpealizetionsbyRoute(route.routeCode)"> לצפיה בהתמחויות </button>
+        </div>
+      </div>
+      <!-- <div class='card-top'>
+        <div class='card-image'>
+          <img [src]="\src">
+          <img src='/src/assets/images/pic_1.jpg'>
+        </div>
+        <div class='card-text'>
+          <p>Quisque cursus, metus vitae pharetra auctor.</p>
+        </div>
+      </div> -->
+      <!-- <div class='card-right'> 
+        <div class='card-image'>
+          <img src='https://images.pexels.com/photos/35828/soap-bubble-colorful-ball-soapy-water.jpg?auto=compress&amp;cs=tinysrgb&amp;h=750&amp;w=1260'>
+        </div>
+        <div class='card-text'>
+          <p>Ut eu diam at pede suscipit sodales.</p>
+        </div>
+      </div>  
+      <app-v-specialization [routeid]="pack"></ackageapp-v-specialization>
+ - <!- <img src="../../../../assets/images/myImageName.png"> -->

@@ -1,0 +1,229 @@
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\bin\Debug\BLL.dll.config
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\bin\Debug\BLL.dll
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\bin\Debug\BLL.pdb
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\bin\Debug\EntityFramework.dll
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\bin\Debug\System.Web.Cors.dll
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\bin\Debug\System.Web.Http.Cors.dll
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\bin\Debug\System.Web.Http.dll
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\bin\Debug\EntityFramework.xml
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\bin\Debug\System.Web.Http.xml
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\bin\Debug\System.Web.Http.Cors.xml
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\obj\Debug\BLL.dll
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\obj\Debug\BLL.pdb
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\bin\Debug\DAL.dll
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\bin\Debug\DAL.pdb
+C:\Users\מחשב\Desktop\beitHamoreProject\updated\BH_API\BLL\bin\Debug\DAL.dll.config
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\bin\Debug\BLL.dll.config
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\bin\Debug\BLL.dll
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\bin\Debug\BLL.pdb
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\bin\Debug\DAL.dll
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\bin\Debug\EntityFramework.dll
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\bin\Debug\System.Web.Cors.dll
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\bin\Debug\System.Web.Http.Cors.dll
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\bin\Debug\System.Web.Http.dll
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\bin\Debug\DAL.pdb
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\bin\Debug\DAL.dll.config
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\bin\Debug\EntityFramework.xml
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\bin\Debug\System.Web.Http.xml
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\bin\Debug\System.Web.Http.Cors.xml
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\obj\Debug\BLL.dll
+C:\Users\מחשב\Desktop\כג סיוון\BH_API\BLL\obj\Debug\BLL.pdb
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\obj\Debug\BLL.dll
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\obj\Debug\BLL.pdb
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\bin\Debug\BLL.dll.config
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\bin\Debug\BLL.dll
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\bin\Debug\BLL.pdb
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\bin\Debug\DAL.dll
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\bin\Debug\DTO.dll
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\bin\Debug\EntityFramework.dll
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\bin\Debug\System.Web.Cors.dll
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\bin\Debug\System.Web.Http.Cors.dll
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\bin\Debug\System.Web.Http.dll
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\bin\Debug\DAL.pdb
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\bin\Debug\DAL.dll.config
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\bin\Debug\DTO.pdb
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\bin\Debug\DTO.dll.config
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\bin\Debug\EntityFramework.xml
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\bin\Debug\System.Web.Http.xml
+C:\Users\מחשב\Desktop\צהרים\כח סיוון\BH_API\BLL\bin\Debug\System.Web.Http.Cors.xml
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\bin\Debug\BLL.dll.config
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\bin\Debug\BLL.dll
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\bin\Debug\BLL.pdb
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\bin\Debug\DAL.dll
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\bin\Debug\DTO.dll
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\bin\Debug\EntityFramework.dll
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\bin\Debug\System.Web.Cors.dll
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\bin\Debug\System.Web.Http.Cors.dll
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\bin\Debug\System.Web.Http.dll
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\bin\Debug\DAL.pdb
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\bin\Debug\DAL.dll.config
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\bin\Debug\DTO.pdb
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\bin\Debug\DTO.dll.config
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\bin\Debug\EntityFramework.xml
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\bin\Debug\System.Web.Http.xml
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\bin\Debug\System.Web.Http.Cors.xml
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\obj\Debug\BLL.dll
+C:\Users\מחשב\Desktop\כח סיוון\BH_API\BLL\obj\Debug\BLL.pdb
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\bin\Debug\BLL.dll.config
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\bin\Debug\BLL.dll
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\bin\Debug\BLL.pdb
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\bin\Debug\DAL.dll
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\bin\Debug\DTO.dll
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\bin\Debug\EntityFramework.dll
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\bin\Debug\System.Web.Cors.dll
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\bin\Debug\System.Web.Http.Cors.dll
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\bin\Debug\System.Web.Http.dll
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\bin\Debug\DAL.pdb
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\bin\Debug\DAL.dll.config
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\bin\Debug\DTO.pdb
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\bin\Debug\DTO.dll.config
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\bin\Debug\EntityFramework.xml
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\bin\Debug\System.Web.Http.xml
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\bin\Debug\System.Web.Http.Cors.xml
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\obj\Debug\BLL.dll
+C:\Users\מחשב\Desktop\א תמוז\BH_API\BLL\obj\Debug\BLL.pdb
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\obj\Debug\BLL.dll
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\obj\Debug\BLL.pdb
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\bin\Debug\BLL.dll.config
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\bin\Debug\BLL.dll
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\bin\Debug\BLL.pdb
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\bin\Debug\DAL.dll
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\bin\Debug\DTO.dll
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\bin\Debug\EntityFramework.dll
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\bin\Debug\System.Web.Cors.dll
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\bin\Debug\System.Web.Http.Cors.dll
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\bin\Debug\System.Web.Http.dll
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\bin\Debug\DAL.pdb
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\bin\Debug\DAL.dll.config
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\bin\Debug\DTO.pdb
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\bin\Debug\DTO.dll.config
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\bin\Debug\EntityFramework.xml
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\bin\Debug\System.Web.Http.xml
+C:\Users\מחשב\Desktop\ח תמוז\BH_API\BLL\bin\Debug\System.Web.Http.Cors.xml
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\bin\Debug\BLL.dll.config
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\bin\Debug\BLL.dll
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\bin\Debug\BLL.pdb
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\bin\Debug\DAL.dll
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\bin\Debug\DTO.dll
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\bin\Debug\EntityFramework.dll
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\bin\Debug\System.Web.Cors.dll
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\bin\Debug\System.Web.Http.Cors.dll
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\bin\Debug\System.Web.Http.dll
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\bin\Debug\DAL.pdb
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\bin\Debug\DAL.dll.config
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\bin\Debug\DTO.pdb
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\bin\Debug\DTO.dll.config
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\bin\Debug\EntityFramework.xml
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\bin\Debug\System.Web.Http.xml
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\bin\Debug\System.Web.Http.Cors.xml
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\obj\Debug\BLL.dll
+C:\Users\מחשב\Desktop\ט תמוז\BH_API\BLL\obj\Debug\BLL.pdb
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\BLL.dll.config
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\BLL.dll
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\BLL.pdb
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\DAL.dll
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\DTO.dll
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\EntityFramework.dll
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\System.Web.Cors.dll
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\System.Web.Http.Cors.dll
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\System.Web.Http.dll
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\DAL.pdb
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\DAL.dll.config
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\DTO.pdb
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\DTO.dll.config
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\EntityFramework.xml
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\System.Web.Http.xml
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\System.Web.Http.Cors.xml
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\obj\Debug\BLL.dll
+C:\Users\מחשב\Documents\GitHub\beit-hamore\beit hamore\BH_API\BLL\obj\Debug\BLL.pdb
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\BLL.dll.config
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\BLL.dll
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\BLL.pdb
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\DAL.dll
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\DTO.dll
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\EntityFramework.dll
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\System.Web.Cors.dll
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\System.Web.Http.Cors.dll
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\System.Web.Http.dll
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\DAL.pdb
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\DAL.dll.config
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\DTO.pdb
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\DTO.dll.config
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\EntityFramework.xml
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\System.Web.Http.xml
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\bin\Debug\System.Web.Http.Cors.xml
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\obj\Debug\BLL.dll
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\BLL\obj\Debug\BLL.pdb

@@ -1,0 +1,201 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BeitHamoreProjectModelStoreContainer" CdmEntityContainer="BeitHamoreProjectEntities">
+    <EntitySetMapping Name="Courses_Tbl">
+      <EntityTypeMapping TypeName="BeitHamoreProjectModel.Courses_Tbl">
+        <MappingFragment StoreEntitySet="Courses_Tbl">
+          <ScalarProperty Name="courseId" ColumnName="courseId" />
+          <ScalarProperty Name="courseName" ColumnName="courseName" />
+          <ScalarProperty Name="teacherId" ColumnName="teacherId" />
+          <ScalarProperty Name="totalHours" ColumnName="totalHours" />
+          <ScalarProperty Name="routeCode" ColumnName="routeCode" />
+          <ScalarProperty Name="specializationCode" ColumnName="specializationCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CourseTimes_Tbl">
+      <EntityTypeMapping TypeName="BeitHamoreProjectModel.CourseTimes_Tbl">
+        <MappingFragment StoreEntitySet="CourseTimes_Tbl">
+          <ScalarProperty Name="courseTimesId" ColumnName="courseTimesId" />
+          <ScalarProperty Name="courseCode" ColumnName="courseCode" />
+          <ScalarProperty Name="dayOfweek" ColumnName="dayOfweek" />
+          <ScalarProperty Name="beginningTime" ColumnName="beginningTime" />
+          <ScalarProperty Name="endTime" ColumnName="endTime" />
+          <ScalarProperty Name="beginingDate" ColumnName="beginingDate" />
+          <ScalarProperty Name="endDate" ColumnName="endDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CourseToDomain_Tbl">
+      <EntityTypeMapping TypeName="BeitHamoreProjectModel.CourseToDomain_Tbl">
+        <MappingFragment StoreEntitySet="CourseToDomain_Tbl">
+          <ScalarProperty Name="domainCourseId" ColumnName="domainCourseId" />
+          <ScalarProperty Name="courseId" ColumnName="courseId" />
+          <ScalarProperty Name="domainId" ColumnName="domainId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DiplomaHours_Tbl">
+      <EntityTypeMapping TypeName="BeitHamoreProjectModel.DiplomaHours_Tbl">
+        <MappingFragment StoreEntitySet="DiplomaHours_Tbl">
+          <ScalarProperty Name="diplomaHoursId" ColumnName="diplomaHoursId" />
+          <ScalarProperty Name="diplomaId" ColumnName="diplomaId" />
+          <ScalarProperty Name="domainId" ColumnName="domainId" />
+          <ScalarProperty Name="specializationId" ColumnName="specializationId" />
+          <ScalarProperty Name="numberMinHoursRequired" ColumnName="numberMinHoursRequired" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Diplomas_Tbl">
+      <EntityTypeMapping TypeName="BeitHamoreProjectModel.Diplomas_Tbl">
+        <MappingFragment StoreEntitySet="Diplomas_Tbl">
+          <ScalarProperty Name="diplomaID" ColumnName="diplomaID" />
+          <ScalarProperty Name="diplomaName" ColumnName="diplomaName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Domains_Tbl">
+      <EntityTypeMapping TypeName="BeitHamoreProjectModel.Domains_Tbl">
+        <MappingFragment StoreEntitySet="Domains_Tbl">
+          <ScalarProperty Name="domainId" ColumnName="domainId" />
+          <ScalarProperty Name="domainName" ColumnName="domainName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegistrationToCourse_Tbl">
+      <EntityTypeMapping TypeName="BeitHamoreProjectModel.RegistrationToCourse_Tbl">
+        <MappingFragment StoreEntitySet="RegistrationToCourse_Tbl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="CourseTimeCode" ColumnName="CourseTimeCode" />
+          <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RegistrationToRoute_Tbl">
+      <EntityTypeMapping TypeName="BeitHamoreProjectModel.RegistrationToRoute_Tbl">
+        <MappingFragment StoreEntitySet="RegistrationToRoute_Tbl">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="RouteCode" ColumnName="RouteCode" />
+          <ScalarProperty Name="strudentCode" ColumnName="strudentCode" />
+          <ScalarProperty Name="year" ColumnName="year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="registrationzationToSpeciali_Tbl">
+      <EntityTypeMapping TypeName="BeitHamoreProjectModel.registrationzationToSpeciali_Tbl">
+        <MappingFragment StoreEntitySet="registrationzationToSpeciali_Tbl">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="specializationCode" ColumnName="specializationCode" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Route_Tbl">
+      <EntityTypeMapping TypeName="BeitHamoreProjectModel.Route_Tbl">
+        <MappingFragment StoreEntitySet="Route_Tbl">
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="routeCode" ColumnName="routeCode" />
+          <ScalarProperty Name="routeName" ColumnName="routeName" />
+          <ScalarProperty Name="diplomaID" ColumnName="diplomaID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Specialization_Tbl">
+      <EntityTypeMapping TypeName="BeitHamoreProjectModel.Specialization_Tbl">
+        <MappingFragment StoreEntitySet="Specialization_Tbl">
+          <ScalarProperty Name="specializationCode" ColumnName="specializationCode" />
+          <ScalarProperty Name="routeCode" ColumnName="routeCode" />
+          <ScalarProperty Name="specializationName" ColumnName="specializationName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SpecializationsToRoutes_Tbl">
+      <EntityTypeMapping TypeName="BeitHamoreProjectModel.SpecializationsToRoutes_Tbl">
+        <MappingFragment StoreEntitySet="SpecializationsToRoutes_Tbl">
+          <ScalarProperty Name="specializationRouteId" ColumnName="specializationRouteId" />
+          <ScalarProperty Name="specializationId" ColumnName="specializationId" />
+          <ScalarProperty Name="routeId" ColumnName="routeId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status_Tbl">
+      <EntityTypeMapping TypeName="BeitHamoreProjectModel.Status_Tbl">
+        <MappingFragment StoreEntitySet="Status_Tbl">
+          <ScalarProperty Name="statusId" ColumnName="statusId" />
+          <ScalarProperty Name="nameStatus" ColumnName="nameStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusesToUsers_Tbl">
+      <EntityTypeMapping TypeName="BeitHamoreProjectModel.StatusesToUsers_Tbl">
+        <MappingFragment StoreEntitySet="StatusesToUsers_Tbl">
+          <ScalarProperty Name="StatusUserId" ColumnName="StatusUserId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="statusId" ColumnName="statusId" />
+          <ScalarProperty Name="isApproved" ColumnName="isApproved" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="BeitHamoreProjectModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teachers_Tbl">
+      <EntityTypeMapping TypeName="BeitHamoreProjectModel.Teachers_Tbl">
+        <MappingFragment StoreEntitySet="Teachers_Tbl">
+          <ScalarProperty Name="teacherId" ColumnName="teacherId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="seniority" ColumnName="seniority" />
+          <ScalarProperty Name="dateStartWork" ColumnName="dateStartWork" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users_Tbl">
+      <EntityTypeMapping TypeName="BeitHamoreProjectModel.Users_Tbl">
+        <MappingFragment StoreEntitySet="Users_Tbl">
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="passwordSHA256" ColumnName="passwordSHA256" />
+          <ScalarProperty Name="tz" ColumnName="tz" />
+          <ScalarProperty Name="firstName" ColumnName="firstName" />
+          <ScalarProperty Name="lastName" ColumnName="lastName" />
+          <ScalarProperty Name="city" ColumnName="city" />
+          <ScalarProperty Name="street" ColumnName="street" />
+          <ScalarProperty Name="houseNumber" ColumnName="houseNumber" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="emailAddress" ColumnName="emailAddress" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="BeitHamoreProjectModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="BeitHamoreProjectModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="BeitHamoreProjectModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="BeitHamoreProjectModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BeitHamoreProjectModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="BeitHamoreProjectModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BeitHamoreProjectModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="BeitHamoreProjectModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="BeitHamoreProjectModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

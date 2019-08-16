@@ -1,0 +1,15 @@
+<div class="container" style="direction: rtl">
+        <span>גננות</span>
+      <input type="radio" name="edu" [(ngModel)]="education" value="gardening" >
+      <span>הוראה</span>
+    <input type="radio" name="edu" [(ngModel)]="education" value="teaching" >
+    <!-- (change)="change(id)" onchange="[education]=id"-->
+    </div>
+    
+    <div class="content-wrapper">
+            <app-gardening *ngIf="education=='gardening'" ></app-gardening>
+            <app-teaching *ngIf="education=='teaching'" ></app-teaching>
+    </div>
+  
+    
+

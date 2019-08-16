@@ -1,0 +1,22 @@
+<div class="md-col-3" *ngFor="let course of courses;let index=index">
+
+  
+  
+  <div class='container'>
+         <div
+    
+      [ngClass]="{'card-left': index%3==1, 'card-right':index%3==2 , 'card-top':index%3==0}"
+        >
+          <div class='card-image'>
+            <!-- <img [src]="spealitation.img"> -->
+          </div>
+          <div class='card-text'>
+              <p>{{course.courseName}}</p> 
+              
+          </div>
+        </div>
+        
+    </div>
+    
+    </div>
+

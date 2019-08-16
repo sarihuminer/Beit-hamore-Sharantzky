@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BeitHamoreProject2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Courses_Tbl">
+    <Key>
+      <PropertyRef Name="courseId" />
+    </Key>
+    <Property Name="courseId" Type="Int32" Nullable="false" />
+    <Property Name="courseName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="teacherId" Type="Int32" Nullable="false" />
+    <Property Name="totalHours" Type="Int32" Nullable="false" />
+    <Property Name="routeCode" Type="Int32" />
+    <Property Name="specializationCode" Type="Int32" />
+    <NavigationProperty Name="Route_Tbl" Relationship="Self.FK_Courses_Tbl_Route_Tbl" FromRole="Courses_Tbl" ToRole="Route_Tbl" />
+    <NavigationProperty Name="Specialization_Tbl" Relationship="Self.FK_Courses_Tbl_SpecializationTbl" FromRole="Courses_Tbl" ToRole="Specialization_Tbl" />
+    <NavigationProperty Name="Teachers_Tbl" Relationship="Self.FK_Courses_Tbl_Teachers_Tbl" FromRole="Courses_Tbl" ToRole="Teachers_Tbl" />
+    <NavigationProperty Name="CourseToDomain_Tbl" Relationship="Self.FK_CourseToDomain_Tbl_Courses_Tbl" FromRole="Courses_Tbl" ToRole="CourseToDomain_Tbl" />
+  </EntityType>
+  <EntityType Name="CourseTimes_Tbl">
+    <Key>
+      <PropertyRef Name="courseTimesId" />
+    </Key>
+    <Property Name="courseTimesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="courseCode" Type="Int32" Nullable="false" />
+    <Property Name="dayOfweek" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="beginningTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="endTime" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="beginingDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="endDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="RegistrationToCourse_Tbl" Relationship="Self.FK_RegistrationToCourse_Tbl_CourseTimes_Tbl" FromRole="CourseTimes_Tbl" ToRole="RegistrationToCourse_Tbl" />
+  </EntityType>
+  <EntityType Name="CourseToDomain_Tbl">
+    <Key>
+      <PropertyRef Name="domainCourseId" />
+    </Key>
+    <Property Name="domainCourseId" Type="Int32" Nullable="false" />
+    <Property Name="courseId" Type="Int32" Nullable="false" />
+    <Property Name="domainId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Courses_Tbl" Relationship="Self.FK_CourseToDomain_Tbl_Courses_Tbl" FromRole="CourseToDomain_Tbl" ToRole="Courses_Tbl" />
+    <NavigationProperty Name="Domains_Tbl" Relationship="Self.FK_CourseToDomain_Tbl_Domains_Tbl" FromRole="CourseToDomain_Tbl" ToRole="Domains_Tbl" />
+  </EntityType>
+  <EntityType Name="DiplomaHours_Tbl">
+    <Key>
+      <PropertyRef Name="diplomaHoursId" />
+    </Key>
+    <Property Name="diplomaHoursId" Type="Int32" Nullable="false" />
+    <Property Name="diplomaId" Type="Int32" Nullable="false" />
+    <Property Name="domainCourseId" Type="Int32" Nullable="false" />
+    <Property Name="numberMinHoursRequired" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Diplomas_Tbl" Relationship="Self.FK_DiplomaHours_Tbl_Diplomas_Tbl" FromRole="DiplomaHours_Tbl" ToRole="Diplomas_Tbl" />
+  </EntityType>
+  <EntityType Name="Diplomas_Tbl">
+    <Key>
+      <PropertyRef Name="diplomaID" />
+    </Key>
+    <Property Name="diplomaID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="diplomaName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="DiplomaHours_Tbl" Relationship="Self.FK_DiplomaHours_Tbl_Diplomas_Tbl" FromRole="Diplomas_Tbl" ToRole="DiplomaHours_Tbl" />
+    <NavigationProperty Name="Route_Tbl" Relationship="Self.FK_Route_Tbl_Diplomas_Tbl" FromRole="Diplomas_Tbl" ToRole="Route_Tbl" />
+  </EntityType>
+  <EntityType Name="Domains_Tbl">
+    <Key>
+      <PropertyRef Name="domainId" />
+    </Key>
+    <Property Name="domainId" Type="Int32" Nullable="false" />
+    <Property Name="domainName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="CourseToDomain_Tbl" Relationship="Self.FK_CourseToDomain_Tbl_Domains_Tbl" FromRole="Domains_Tbl" ToRole="CourseToDomain_Tbl" />
+  </EntityType>
+  <EntityType Name="RegistrationToCourse_Tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="CourseTimeCode" Type="Int32" Nullable="false" />
+    <Property Name="StudentCode" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="CourseTimes_Tbl" Relationship="Self.FK_RegistrationToCourse_Tbl_CourseTimes_Tbl" FromRole="RegistrationToCourse_Tbl" ToRole="CourseTimes_Tbl" />
+  </EntityType>
+  <EntityType Name="RegistrationToRoute_Tbl">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RouteCode" Type="Int32" Nullable="false" />
+    <Property Name="strudentCode" Type="Int32" Nullable="false" />
+    <Property Name="year" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Route_Tbl" Relationship="Self.FK_RegistrationToRoute_Tbl_Route_Tbl" FromRole="RegistrationToRoute_Tbl" ToRole="Route_Tbl" />
+  </EntityType>
+  <EntityType Name="registrationzationToSpeciali_Tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="specializationCode" Type="Int32" Nullable="false" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Specialization_Tbl" Relationship="Self.FK_registrationzationToSpeciali_Tbl_Specialization_Tbl" FromRole="registrationzationToSpeciali_Tbl" ToRole="Specialization_Tbl" />
+  </EntityType>
+  <EntityType Name="Route_Tbl">
+    <Key>
+      <PropertyRef Name="routeCode" />
+    </Key>
+    <Property Name="routeCode" Type="Int32" Nullable="false" />
+    <Property Name="routeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="diplomaID" Type="Int32" />
+    <NavigationProperty Name="Courses_Tbl" Relationship="Self.FK_Courses_Tbl_Route_Tbl" FromRole="Route_Tbl" ToRole="Courses_Tbl" />
+    <NavigationProperty Name="Diplomas_Tbl" Relationship="Self.FK_Route_Tbl_Diplomas_Tbl" FromRole="Route_Tbl" ToRole="Diplomas_Tbl" />
+    <NavigationProperty Name="RegistrationToRoute_Tbl" Relationship="Self.FK_RegistrationToRoute_Tbl_Route_Tbl" FromRole="Route_Tbl" ToRole="RegistrationToRoute_Tbl" />
+    <NavigationProperty Name="SpecializationsToRoutes_Tbl" Relationship="Self.FK_SpecializationsToRoutes_Tbl_Route_Tbl" FromRole="Route_Tbl" ToRole="SpecializationsToRoutes_Tbl" />
+    <NavigationProperty Name="Specialization_Tbl" Relationship="Self.FK_SpecializationTbl_Route_Tbl" FromRole="Route_Tbl" ToRole="Specialization_Tbl" />
+    <NavigationProperty Name="Specialization_Tbl1" Relationship="Self.FK_SpecializationTbl_Route_Tbl1" FromRole="Route_Tbl" ToRole="Specialization_Tbl" />
+    <Property Name="certificateID" Type="Int32" />
+    <Property Name="HoursRequired" Type="Int32" Nullable="false" />
+    <Property Name="HoursToConvert" Type="Int32" />
+    <NavigationProperty Name="CertificatesTypes_Tbl" Relationship="BeitHamoreProject2Model.FK_Route_Tbl_CertificatesTypes_Tbl" FromRole="Route_Tbl" ToRole="CertificatesTypes_Tbl" />
+  </EntityType>
+  <EntityType Name="Specialization_Tbl">
+    <Key>
+      <PropertyRef Name="specializationCode" />
+    </Key>
+    <Property Name="specializationCode" Type="Int32" Nullable="false" />
+    <Property Name="routeCode" Type="Int32" Nullable="false" />
+    <Property Name="specializationName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Courses_Tbl" Relationship="Self.FK_Courses_Tbl_SpecializationTbl" FromRole="Specialization_Tbl" ToRole="Courses_Tbl" />
+    <NavigationProperty Name="registrationzationToSpeciali_Tbl" Relationship="Self.FK_registrationzationToSpeciali_Tbl_Specialization_Tbl" FromRole="Specialization_Tbl" ToRole="registrationzationToSpeciali_Tbl" />
+    <NavigationProperty Name="Route_Tbl" Relationship="Self.FK_SpecializationTbl_Route_Tbl" FromRole="Specialization_Tbl" ToRole="Route_Tbl" />
+    <NavigationProperty Name="Route_Tbl1" Relationship="Self.FK_SpecializationTbl_Route_Tbl1" FromRole="Specialization_Tbl" ToRole="Route_Tbl" />
+    <NavigationProperty Name="SpecializationsToRoutes_Tbl" Relationship="Self.FK_SpecializationsToRoutes_Tbl_Specialization_Tbl" FromRole="Specialization_Tbl" ToRole="SpecializationsToRoutes_Tbl" />
+    <Property Name="HoursRequired" Type="Int32" Nullable="false" />
+    <Property Name="HoursToConvert" Type="Int32" />
+  </EntityType>
+  <EntityType Name="SpecializationsToRoutes_Tbl">
+    <Key>
+      <PropertyRef Name="specializationRouteId" />
+    </Key>
+    <Property Name="specializationRouteId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="specializationId" Type="Int32" />
+    <Property Name="routeId" Type="Int32" />
+    <NavigationProperty Name="Route_Tbl" Relationship="Self.FK_SpecializationsToRoutes_Tbl_Route_Tbl" FromRole="SpecializationsToRoutes_Tbl" ToRole="Route_Tbl" />
+    <NavigationProperty Name="Specialization_Tbl" Relationship="Self.FK_SpecializationsToRoutes_Tbl_Specialization_Tbl" FromRole="SpecializationsToRoutes_Tbl" ToRole="Specialization_Tbl" />
+  </EntityType>
+  <EntityType Name="Status_Tbl">
+    <Key>
+      <PropertyRef Name="statusId" />
+    </Key>
+    <Property Name="statusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nameStatus" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="StatusesToUsers_Tbl" Relationship="Self.FK_StatusesToUsers_Tbl_Status_Tbl" FromRole="Status_Tbl" ToRole="StatusesToUsers_Tbl" />
+  </EntityType>
+  <EntityType Name="StatusesToUsers_Tbl">
+    <Key>
+      <PropertyRef Name="StatusUserId" />
+    </Key>
+    <Property Name="StatusUserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="statusId" Type="Int32" Nullable="false" />
+    <Property Name="isApproved" Type="Int32" />
+    <NavigationProperty Name="Status_Tbl" Relationship="Self.FK_StatusesToUsers_Tbl_Status_Tbl" FromRole="StatusesToUsers_Tbl" ToRole="Status_Tbl" />
+    <NavigationProperty Name="Users_Tbl" Relationship="Self.FK_StatusesToUsers_Tbl_Users_Tbl" FromRole="StatusesToUsers_Tbl" ToRole="Users_Tbl" />
+  </EntityType>
+  <EntityType Name="Teachers_Tbl">
+    <Key>
+      <PropertyRef Name="teacherId" />
+    </Key>
+    <Property Name="teacherId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="seniority" Type="Int32" />
+    <Property Name="dateStartWork" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="Courses_Tbl" Relationship="Self.FK_Courses_Tbl_Teachers_Tbl" FromRole="Teachers_Tbl" ToRole="Courses_Tbl" />
+    <NavigationProperty Name="Users_Tbl" Relationship="Self.FK_Teachers_Tbl_Users_Tbl" FromRole="Teachers_Tbl" ToRole="Users_Tbl" />
+  </EntityType>
+  <EntityType Name="Users_Tbl">
+    <Key>
+      <PropertyRef Name="userId" />
+    </Key>
+    <Property Name="userId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="passwordSHA256" Type="String" MaxLength="64" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tz" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="lastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="city" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="street" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="houseNumber" Type="Int32" />
+    <Property Name="phone" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="emailAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="StatusesToUsers_Tbl" Relationship="Self.FK_StatusesToUsers_Tbl_Users_Tbl" FromRole="Users_Tbl" ToRole="StatusesToUsers_Tbl" />
+    <NavigationProperty Name="Teachers_Tbl" Relationship="Self.FK_Teachers_Tbl_Users_Tbl" FromRole="Users_Tbl" ToRole="Teachers_Tbl" />
+  </EntityType>
+  <Association Name="FK_Courses_Tbl_Route_Tbl">
+    <End Role="Route_Tbl" Type="Self.Route_Tbl" Multiplicity="0..1" />
+    <End Role="Courses_Tbl" Type="Self.Courses_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Route_Tbl">
+        <PropertyRef Name="routeCode" />
+      </Principal>
+      <Dependent Role="Courses_Tbl">
+        <PropertyRef Name="routeCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Courses_Tbl_SpecializationTbl">
+    <End Role="Specialization_Tbl" Type="Self.Specialization_Tbl" Multiplicity="0..1" />
+    <End Role="Courses_Tbl" Type="Self.Courses_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Specialization_Tbl">
+        <PropertyRef Name="specializationCode" />
+      </Principal>
+      <Dependent Role="Courses_Tbl">
+        <PropertyRef Name="specializationCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Courses_Tbl_Teachers_Tbl">
+    <End Role="Teachers_Tbl" Type="Self.Teachers_Tbl" Multiplicity="1" />
+    <End Role="Courses_Tbl" Type="Self.Courses_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Teachers_Tbl">
+        <PropertyRef Name="teacherId" />
+      </Principal>
+      <Dependent Role="Courses_Tbl">
+        <PropertyRef Name="teacherId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseToDomain_Tbl_Courses_Tbl">
+    <End Role="Courses_Tbl" Type="Self.Courses_Tbl" Multiplicity="1" />
+    <End Role="CourseToDomain_Tbl" Type="Self.CourseToDomain_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses_Tbl">
+        <PropertyRef Name="courseId" />
+      </Principal>
+      <Dependent Role="CourseToDomain_Tbl">
+        <PropertyRef Name="courseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegistrationToCourse_Tbl_CourseTimes_Tbl">
+    <End Role="CourseTimes_Tbl" Type="Self.CourseTimes_Tbl" Multiplicity="1" />
+    <End Role="RegistrationToCourse_Tbl" Type="Self.RegistrationToCourse_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CourseTimes_Tbl">
+        <PropertyRef Name="courseTimesId" />
+      </Principal>
+      <Dependent Role="RegistrationToCourse_Tbl">
+        <PropertyRef Name="CourseTimeCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseToDomain_Tbl_Domains_Tbl">
+    <End Role="Domains_Tbl" Type="Self.Domains_Tbl" Multiplicity="1" />
+    <End Role="CourseToDomain_Tbl" Type="Self.CourseToDomain_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Domains_Tbl">
+        <PropertyRef Name="domainId" />
+      </Principal>
+      <Dependent Role="CourseToDomain_Tbl">
+        <PropertyRef Name="domainId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DiplomaHours_Tbl_Diplomas_Tbl">
+    <End Role="Diplomas_Tbl" Type="Self.Diplomas_Tbl" Multiplicity="1" />
+    <End Role="DiplomaHours_Tbl" Type="Self.DiplomaHours_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Diplomas_Tbl">
+        <PropertyRef Name="diplomaID" />
+      </Principal>
+      <Dependent Role="DiplomaHours_Tbl">
+        <PropertyRef Name="diplomaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Route_Tbl_Diplomas_Tbl">
+    <End Role="Diplomas_Tbl" Type="Self.Diplomas_Tbl" Multiplicity="0..1" />
+    <End Role="Route_Tbl" Type="Self.Route_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Diplomas_Tbl">
+        <PropertyRef Name="diplomaID" />
+      </Principal>
+      <Dependent Role="Route_Tbl">
+        <PropertyRef Name="diplomaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_RegistrationToRoute_Tbl_Route_Tbl">
+    <End Role="Route_Tbl" Type="Self.Route_Tbl" Multiplicity="1" />
+    <End Role="RegistrationToRoute_Tbl" Type="Self.RegistrationToRoute_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Route_Tbl">
+        <PropertyRef Name="routeCode" />
+      </Principal>
+      <Dependent Role="RegistrationToRoute_Tbl">
+        <PropertyRef Name="RouteCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_registrationzationToSpeciali_Tbl_Specialization_Tbl">
+    <End Role="Specialization_Tbl" Type="Self.Specialization_Tbl" Multiplicity="1" />
+    <End Role="registrationzationToSpeciali_Tbl" Type="Self.registrationzationToSpeciali_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Specialization_Tbl">
+        <PropertyRef Name="specializationCode" />
+      </Principal>
+      <Dependent Role="registrationzationToSpeciali_Tbl">
+        <PropertyRef Name="specializationCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SpecializationsToRoutes_Tbl_Route_Tbl">
+    <End Role="Route_Tbl" Type="Self.Route_Tbl" Multiplicity="0..1" />
+    <End Role="SpecializationsToRoutes_Tbl" Type="Self.SpecializationsToRoutes_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Route_Tbl">
+        <PropertyRef Name="routeCode" />
+      </Principal>
+      <Dependent Role="SpecializationsToRoutes_Tbl">
+        <PropertyRef Name="routeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SpecializationTbl_Route_Tbl">
+    <End Role="Route_Tbl" Type="Self.Route_Tbl" Multiplicity="1" />
+    <End Role="Specialization_Tbl" Type="Self.Specialization_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Route_Tbl">
+        <PropertyRef Name="routeCode" />
+      </Principal>
+      <Dependent Role="Specialization_Tbl">
+        <PropertyRef Name="routeCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SpecializationTbl_Route_Tbl1">
+    <End Role="Route_Tbl" Type="Self.Route_Tbl" Multiplicity="1" />
+    <End Role="Specialization_Tbl" Type="Self.Specialization_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Route_Tbl">
+        <PropertyRef Name="routeCode" />
+      </Principal>
+      <Dependent Role="Specialization_Tbl">
+        <PropertyRef Name="routeCode" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SpecializationsToRoutes_Tbl_Specialization_Tbl">
+    <End Role="Specialization_Tbl" Type="Self.Specialization_Tbl" Multiplicity="0..1" />
+    <End Role="SpecializationsToRoutes_Tbl" Type="Self.SpecializationsToRoutes_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Specialization_Tbl">
+        <PropertyRef Name="specializationCode" />
+      </Principal>
+      <Dependent Role="SpecializationsToRoutes_Tbl">
+        <PropertyRef Name="specializationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StatusesToUsers_Tbl_Status_Tbl">
+    <End Role="Status_Tbl" Type="Self.Status_Tbl" Multiplicity="1" />
+    <End Role="StatusesToUsers_Tbl" Type="Self.StatusesToUsers_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status_Tbl">
+        <PropertyRef Name="statusId" />
+      </Principal>
+      <Dependent Role="StatusesToUsers_Tbl">
+        <PropertyRef Name="statusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StatusesToUsers_Tbl_Users_Tbl">
+    <End Role="Users_Tbl" Type="Self.Users_Tbl" Multiplicity="1" />
+    <End Role="StatusesToUsers_Tbl" Type="Self.StatusesToUsers_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users_Tbl">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="StatusesToUsers_Tbl">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Teachers_Tbl_Users_Tbl">
+    <End Role="Users_Tbl" Type="Self.Users_Tbl" Multiplicity="1" />
+    <End Role="Teachers_Tbl" Type="Self.Teachers_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users_Tbl">
+        <PropertyRef Name="userId" />
+      </Principal>
+      <Dependent Role="Teachers_Tbl">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BeitHamoreProject2Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Courses_Tbl" EntityType="Self.Courses_Tbl" />
+    <EntitySet Name="CourseTimes_Tbl" EntityType="Self.CourseTimes_Tbl" />
+    <EntitySet Name="CourseToDomain_Tbl" EntityType="Self.CourseToDomain_Tbl" />
+    <EntitySet Name="DiplomaHours_Tbl" EntityType="Self.DiplomaHours_Tbl" />
+    <EntitySet Name="Diplomas_Tbl" EntityType="Self.Diplomas_Tbl" />
+    <EntitySet Name="Domains_Tbl" EntityType="Self.Domains_Tbl" />
+    <EntitySet Name="RegistrationToCourse_Tbl" EntityType="Self.RegistrationToCourse_Tbl" />
+    <EntitySet Name="RegistrationToRoute_Tbl" EntityType="Self.RegistrationToRoute_Tbl" />
+    <EntitySet Name="registrationzationToSpeciali_Tbl" EntityType="Self.registrationzationToSpeciali_Tbl" />
+    <EntitySet Name="Route_Tbl" EntityType="Self.Route_Tbl" />
+    <EntitySet Name="Specialization_Tbl" EntityType="Self.Specialization_Tbl" />
+    <EntitySet Name="SpecializationsToRoutes_Tbl" EntityType="Self.SpecializationsToRoutes_Tbl" />
+    <EntitySet Name="Status_Tbl" EntityType="Self.Status_Tbl" />
+    <EntitySet Name="StatusesToUsers_Tbl" EntityType="Self.StatusesToUsers_Tbl" />
+    <EntitySet Name="Teachers_Tbl" EntityType="Self.Teachers_Tbl" />
+    <EntitySet Name="Users_Tbl" EntityType="Self.Users_Tbl" />
+    <AssociationSet Name="FK_Courses_Tbl_Route_Tbl" Association="Self.FK_Courses_Tbl_Route_Tbl">
+      <End Role="Route_Tbl" EntitySet="Route_Tbl" />
+      <End Role="Courses_Tbl" EntitySet="Courses_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Courses_Tbl_SpecializationTbl" Association="Self.FK_Courses_Tbl_SpecializationTbl">
+      <End Role="Specialization_Tbl" EntitySet="Specialization_Tbl" />
+      <End Role="Courses_Tbl" EntitySet="Courses_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Courses_Tbl_Teachers_Tbl" Association="Self.FK_Courses_Tbl_Teachers_Tbl">
+      <End Role="Teachers_Tbl" EntitySet="Teachers_Tbl" />
+      <End Role="Courses_Tbl" EntitySet="Courses_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseToDomain_Tbl_Courses_Tbl" Association="Self.FK_CourseToDomain_Tbl_Courses_Tbl">
+      <End Role="Courses_Tbl" EntitySet="Courses_Tbl" />
+      <End Role="CourseToDomain_Tbl" EntitySet="CourseToDomain_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegistrationToCourse_Tbl_CourseTimes_Tbl" Association="Self.FK_RegistrationToCourse_Tbl_CourseTimes_Tbl">
+      <End Role="CourseTimes_Tbl" EntitySet="CourseTimes_Tbl" />
+      <End Role="RegistrationToCourse_Tbl" EntitySet="RegistrationToCourse_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseToDomain_Tbl_Domains_Tbl" Association="Self.FK_CourseToDomain_Tbl_Domains_Tbl">
+      <End Role="Domains_Tbl" EntitySet="Domains_Tbl" />
+      <End Role="CourseToDomain_Tbl" EntitySet="CourseToDomain_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DiplomaHours_Tbl_Diplomas_Tbl" Association="Self.FK_DiplomaHours_Tbl_Diplomas_Tbl">
+      <End Role="Diplomas_Tbl" EntitySet="Diplomas_Tbl" />
+      <End Role="DiplomaHours_Tbl" EntitySet="DiplomaHours_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Route_Tbl_Diplomas_Tbl" Association="Self.FK_Route_Tbl_Diplomas_Tbl">
+      <End Role="Diplomas_Tbl" EntitySet="Diplomas_Tbl" />
+      <End Role="Route_Tbl" EntitySet="Route_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_RegistrationToRoute_Tbl_Route_Tbl" Association="Self.FK_RegistrationToRoute_Tbl_Route_Tbl">
+      <End Role="Route_Tbl" EntitySet="Route_Tbl" />
+      <End Role="RegistrationToRoute_Tbl" EntitySet="RegistrationToRoute_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_registrationzationToSpeciali_Tbl_Specialization_Tbl" Association="Self.FK_registrationzationToSpeciali_Tbl_Specialization_Tbl">
+      <End Role="Specialization_Tbl" EntitySet="Specialization_Tbl" />
+      <End Role="registrationzationToSpeciali_Tbl" EntitySet="registrationzationToSpeciali_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SpecializationsToRoutes_Tbl_Route_Tbl" Association="Self.FK_SpecializationsToRoutes_Tbl_Route_Tbl">
+      <End Role="Route_Tbl" EntitySet="Route_Tbl" />
+      <End Role="SpecializationsToRoutes_Tbl" EntitySet="SpecializationsToRoutes_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SpecializationTbl_Route_Tbl" Association="Self.FK_SpecializationTbl_Route_Tbl">
+      <End Role="Route_Tbl" EntitySet="Route_Tbl" />
+      <End Role="Specialization_Tbl" EntitySet="Specialization_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SpecializationTbl_Route_Tbl1" Association="Self.FK_SpecializationTbl_Route_Tbl1">
+      <End Role="Route_Tbl" EntitySet="Route_Tbl" />
+      <End Role="Specialization_Tbl" EntitySet="Specialization_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SpecializationsToRoutes_Tbl_Specialization_Tbl" Association="Self.FK_SpecializationsToRoutes_Tbl_Specialization_Tbl">
+      <End Role="Specialization_Tbl" EntitySet="Specialization_Tbl" />
+      <End Role="SpecializationsToRoutes_Tbl" EntitySet="SpecializationsToRoutes_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StatusesToUsers_Tbl_Status_Tbl" Association="Self.FK_StatusesToUsers_Tbl_Status_Tbl">
+      <End Role="Status_Tbl" EntitySet="Status_Tbl" />
+      <End Role="StatusesToUsers_Tbl" EntitySet="StatusesToUsers_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StatusesToUsers_Tbl_Users_Tbl" Association="Self.FK_StatusesToUsers_Tbl_Users_Tbl">
+      <End Role="Users_Tbl" EntitySet="Users_Tbl" />
+      <End Role="StatusesToUsers_Tbl" EntitySet="StatusesToUsers_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Teachers_Tbl_Users_Tbl" Association="Self.FK_Teachers_Tbl_Users_Tbl">
+      <End Role="Users_Tbl" EntitySet="Users_Tbl" />
+      <End Role="Teachers_Tbl" EntitySet="Teachers_Tbl" />
+    </AssociationSet>
+    <EntitySet Name="CertificatesTypes_Tbl" EntityType="BeitHamoreProject2Model.CertificatesTypes_Tbl" />
+    <EntitySet Name="RegistrationToBooklets_Tbl" EntityType="BeitHamoreProject2Model.RegistrationToBooklets_Tbl" />
+    <EntitySet Name="sysdiagrams" EntityType="BeitHamoreProject2Model.sysdiagram" />
+    <AssociationSet Name="FK_Route_Tbl_CertificatesTypes_Tbl" Association="BeitHamoreProject2Model.FK_Route_Tbl_CertificatesTypes_Tbl">
+      <End Role="CertificatesTypes_Tbl" EntitySet="CertificatesTypes_Tbl" />
+      <End Role="Route_Tbl" EntitySet="Route_Tbl" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="CertificatesTypes_Tbl">
+    <Key>
+      <PropertyRef Name="CertificateID" />
+    </Key>
+    <Property Name="CertificateID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CertificateName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Route_Tbl" Relationship="BeitHamoreProject2Model.FK_Route_Tbl_CertificatesTypes_Tbl" FromRole="CertificatesTypes_Tbl" ToRole="Route_Tbl" />
+  </EntityType>
+  <EntityType Name="RegistrationToBooklets_Tbl">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookletCode" Type="Int32" Nullable="false" />
+    <Property Name="studentCode" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <Association Name="FK_Route_Tbl_CertificatesTypes_Tbl">
+    <End Type="BeitHamoreProject2Model.CertificatesTypes_Tbl" Role="CertificatesTypes_Tbl" Multiplicity="0..1" />
+    <End Type="BeitHamoreProject2Model.Route_Tbl" Role="Route_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="CertificatesTypes_Tbl">
+        <PropertyRef Name="CertificateID" />
+      </Principal>
+      <Dependent Role="Route_Tbl">
+        <PropertyRef Name="certificateID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

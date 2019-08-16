@@ -1,0 +1,41 @@
+
+	<div class="container">
+		<section id="content">
+			<form (submit)="addCource()">
+				<h1> הוספת קורס</h1>
+				<div>
+					<input type="text" placeholder="courseId" required="" [(ngModel)]="courseId"  name="courseId" />
+				</div>
+				<div>
+					<input type="text" placeholder="courseName" required="" [(ngModel)]="courseName" name="courseName" />
+        </div>
+        <div>
+					<input type="text" placeholder="teacherId" required="" [(ngModel)]="teacherId" name="teacherId" />
+        </div>
+        <div>
+					<input type="number" placeholder="totalHours" min=30  required="" [(ngModel)]="totalHours" name="totalHours" />
+        </div>
+        <div>
+					<input type="number" placeholder="routeCode" required="" [(ngModel)]="routeCode"  name="routeCode" />
+        </div>
+        <div>
+					<input type="text" placeholder="specializationCode" required="" [(ngModel)]="specializationCode"  name="specializationCode" />
+        </div>
+        <input type="submit" value="שמירה" />
+			</form><!-- form -->
+			<div class="button">
+				
+			</div><!-- button -->
+		</section><!-- content -->
+	</div><!-- container -->
+
+	<form class="example-form">
+		<mat-form-field class="example-full-width" >
+		  <input type="text" placeholder="Assignee" aria-label="Assignee" matInput [formControl]="myControl" [matAutocomplete]="auto">
+		  <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn">
+			<mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+			  {{option.name}}
+			</mat-option>
+		  </mat-autocomplete>
+		</mat-form-field>
+	  </form>

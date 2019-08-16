@@ -1,0 +1,45 @@
+	<div class="container">
+		<section id="content">
+			<form (submit)="register()">
+				<h1> להרשמה</h1>
+				<div>
+					<input type="text" [(ngModel)]="user.userId" placeholder="UserId" required="" name="userId" id="username" />
+				</div>
+				<div>
+					<input type="password" [(ngModel)]="user.passwordSHA256" placeholder="Password" name="pwd" required="" id="password" />
+        </div>
+        <div>
+					<input type="text"[(ngModel)]="user.tz" name="tz" placeholder="tz" required="" id="tz" />
+		</div> 
+		       <div>
+					<input type="text"[(ngModel)]="user.firstName" name="tz" placeholder="firstName" required="" id="firstName" />
+        </div>
+        <div>
+					<input type="text" [(ngModel)]="user.lastName" name="lastname" placeholder="lastName" required="" id="lastName" />
+        </div>
+        <div>
+					<input type="text" [(ngModel)]="user.city" name="city" placeholder="city" required="" id="city" />
+        </div>
+        <div>
+					<input type="text" [(ngModel)]="user.street" name="street" placeholder="street" required="" id="street" />
+        </div>
+        <div>
+					<input type="text"[(ngModel)]="user.userId" name="w1" placeholder="houseNumber" required="" id="houseNumber" />
+        </div>
+        <div>
+					<input type="text" [(ngModel)]="user.phone" name="phone" placeholder="phone" required="" id="phone" />
+        </div>
+        <div>
+					<input type="text" [(ngModel)]="user.emailAddress" name="emailAddress" placeholder="emailAddress" required="" id="emailAddress" />
+        </div>
+        
+				<div>
+					<input type="submit" value="שמירה" />
+					
+				</div>
+			</form><!-- form -->
+			<div class="button">
+				
+			</div><!-- button -->
+		</section><!-- content -->
+	</div><!-- container -->

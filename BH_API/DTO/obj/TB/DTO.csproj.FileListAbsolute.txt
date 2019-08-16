@@ -1,0 +1,15 @@
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\DTO\bin\TB\DTO.dll.config
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\DTO\bin\TB\DTO.dll
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\DTO\bin\TB\DTO.pdb
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\DTO\bin\TB\DAL.dll
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\DTO\bin\TB\EntityFramework.dll
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\DTO\bin\TB\EntityFramework.SqlServer.dll
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\DTO\bin\TB\DAL.pdb
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\DTO\bin\TB\DAL.dll.config
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\DTO\bin\TB\EntityFramework.xml
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\DTO\bin\TB\EntityFramework.SqlServer.xml
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\DTO\obj\TB\DTO.csprojAssemblyReference.cache
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\DTO\obj\TB\DTO.csproj.CoreCompileInputs.cache
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\DTO\obj\TB\DTO.csproj.CopyComplete
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\DTO\obj\TB\DTO.dll
+C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\DTO\obj\TB\DTO.pdb
