@@ -15,7 +15,7 @@ export class UserService {
   login(user:User):Observable<User>{
    
   var c= this.http.get<User>(this.basicURL+"/login/"+user.tz+"/"+user.passwordSHA256);
-  debugger
+  
   return c;
   }
   
@@ -23,4 +23,10 @@ export class UserService {
 register(user:User){
 return this.http.post(this.basicURL+"/register",user);
 }
+getUserById(tz:string):Observable<any>{
+  
+  return this.http.get<User>(this.basicURL+"/getUser/"+tz);
+
+ 
+  }
 }

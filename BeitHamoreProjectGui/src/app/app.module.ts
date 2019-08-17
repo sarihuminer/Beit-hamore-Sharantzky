@@ -13,8 +13,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MyMaterialModule } from './my-material/my-material.module';
 import { IndexComponent } from './components/courses/index/index.component';
 import { MenunavComponent } from './components/menunav/menunav.component';
-import { TeachingGardeningComponent } from './components/courses/teaching-gardening/teaching-gardening.component';
-import { GardeningComponent } from './components/courses/gardening/gardening.component';
 import { TeachingComponent } from './components/courses/teaching/teaching.component';
 import { VRoutesComponent } from './components/courses/v-routes/v-routes.component';
 import { VSpecializationComponent } from './components/courses/v-specialization/v-specialization.component';
@@ -31,8 +29,6 @@ import { RegistrationToStudyComponent } from './components/users/registration-to
     AddCourseComponent,
     IndexComponent,
     MenunavComponent,
-    TeachingGardeningComponent,
-    GardeningComponent,
     TeachingComponent,
     VRoutesComponent,
     VSpecializationComponent,

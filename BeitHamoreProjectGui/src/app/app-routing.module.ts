@@ -6,7 +6,6 @@ import { RegistrationComponent } from './components/users/registration/registrat
 import { AddCourseComponent } from './components/courses/add-course/add-course.component'
 import { IndexComponent } from './components/courses/index/index.component';
 import { MenunavComponent } from './components/menunav/menunav.component';
-import { TeachingGardeningComponent } from './components/courses/teaching-gardening/teaching-gardening.component';
 import { VRoutesComponent } from './components/courses/v-routes/v-routes.component';
 import { VSpecializationComponent } from './components/courses/v-specialization/v-specialization.component';
 import { VCoursesComponent } from './components/courses/v-courses/v-courses.component';
@@ -22,7 +21,6 @@ const routes: Routes = [
   { path: 'register', component: RegistrationComponent },
   { path: 'index', component: IndexComponent },
   { path: 'Menunav', component: MenunavComponent },
-  { path: 'teaching-gardening', component: TeachingGardeningComponent },
   { path: 'view-all-routes', component: VRoutesComponent },
   { path: 'view-all-spealitation', component: VSpecializationComponent },
   {path:"view-spealitation/:id", component:VSpecializationComponent},

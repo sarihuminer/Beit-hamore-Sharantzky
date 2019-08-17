@@ -111,3 +111,17 @@ C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\DTO\obj\Debug\DTO.c
 C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\DTO\obj\Debug\DTO.csproj.CopyComplete
 C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\DTO\obj\Debug\DTO.dll
 C:\Users\WDC\Documents\github\beit-hamore\beit hamore\BH_API\DTO\obj\Debug\DTO.pdb
+C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DTO\bin\Debug\DTO.dll.config
+C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DTO\bin\Debug\DTO.dll
+C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DTO\bin\Debug\DTO.pdb
+C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DTO\bin\Debug\DAL.dll
+C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DTO\bin\Debug\EntityFramework.dll
+C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DTO\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DTO\bin\Debug\DAL.pdb
+C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DTO\bin\Debug\DAL.dll.config
+C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DTO\bin\Debug\EntityFramework.xml
+C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DTO\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DTO\obj\Debug\DTO.dll
+C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DTO\obj\Debug\DTO.pdb

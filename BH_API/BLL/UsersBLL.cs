@@ -50,6 +50,17 @@ namespace BLL
             }
         }
 
+        public static UserDetailsDTO GetUser(string tz)
+        {
+          using(BeitHamoreProjectEntities db =new BeitHamoreProjectEntities())
+            {
+                var user = db.Users_Tbl.Where(u => u.tz == tz).FirstOrDefault();
+                if (user != null)
+                    return Converssins.UserDetailsDTOConverssion.GetStatusNamesForUser(user);
+                return null;
+            }
+        }
+
         public static UserDetailsDTO GetUserByTZAndPw(string tz,string passw)
         {
             using (BeitHamoreProjectEntities db = new BeitHamoreProjectEntities())

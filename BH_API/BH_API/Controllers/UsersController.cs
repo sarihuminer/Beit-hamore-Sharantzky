@@ -8,7 +8,8 @@ using System.Net.Http;
 using System.Web;
 using System.Web.Http;
 using System.Web.Http.Cors;
-
+using DAL;
+using BLL;
 namespace BH_API.Controllers
 {
     [RoutePrefix("api/users")]
@@ -25,6 +26,27 @@ namespace BH_API.Controllers
             else
                 return BadRequest();
         }
+        //get user by id
+        [HttpGet]
+        [Route("getUser/{tz}")]
+        public IHttpActionResult GetUser([FromUri]string tz)
+        {
+            try
+            {
+                UserDetailsDTO u = new UserDetailsDTO();
+                u = UsersBLL.GetUser(tz);
+                  
+                if (u != null)
+                    return Ok(u);
+            }
+            catch (Exception)
+            {
+
+                return BadRequest();
+            }
+            return BadRequest();
+
+        }
         [HttpGet]
         [Route("login/{tz}/{passw}")]
         public IHttpActionResult Login([FromUri]string tz, string passw)
@@ -36,7 +58,7 @@ namespace BH_API.Controllers
             //if (listStatus.Count > 0)
             // {
             UserDetailsDTO userDetailsDTO = new UserDetailsDTO();
-            userDetailsDTO = BLL.UsersBLL.GetUserByTZAndPw(tz, passw);
+            userDetailsDTO = UsersBLL.GetUserByTZAndPw(tz, passw);
             try
             {
 
