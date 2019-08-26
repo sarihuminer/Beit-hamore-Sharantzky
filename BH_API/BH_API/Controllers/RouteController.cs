@@ -20,5 +20,6 @@ namespace BH_API.Controllers
             {
                 return Ok(RouteBLL.GetAllRoutes());
             }
-        }
+        
+    }
 }

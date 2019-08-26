@@ -17,27 +17,16 @@ namespace DAL
     
     public partial class BeitHamoreProjectEntities : DbContext
     {
-#if sari
         public BeitHamoreProjectEntities()
-          : base("name=BeitHamoreProjectEntities2")
+            : base("name=BeitHamoreProjectEntities")
         {
         }
-
-#endif
-#if tt
-        public BeitHamoreProjectEntities()
-               : base("name=BeitHamoreProjectEntities")
-        {
-        } 
-#endif
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
         }
-
-
-
+    
         public virtual DbSet<Courses_Tbl> Courses_Tbl { get; set; }
         public virtual DbSet<CourseTimes_Tbl> CourseTimes_Tbl { get; set; }
         public virtual DbSet<CourseToDomain_Tbl> CourseToDomain_Tbl { get; set; }
@@ -45,7 +34,6 @@ namespace DAL
         public virtual DbSet<Diplomas_Tbl> Diplomas_Tbl { get; set; }
         public virtual DbSet<Domains_Tbl> Domains_Tbl { get; set; }
         public virtual DbSet<RegistrationToCourse_Tbl> RegistrationToCourse_Tbl { get; set; }
-        public virtual DbSet<RegistrationToRoute_Tbl> RegistrationToRoute_Tbl { get; set; }
         public virtual DbSet<registrationzationToSpeciali_Tbl> registrationzationToSpeciali_Tbl { get; set; }
         public virtual DbSet<Route_Tbl> Route_Tbl { get; set; }
         public virtual DbSet<Specialization_Tbl> Specialization_Tbl { get; set; }
@@ -55,6 +43,7 @@ namespace DAL
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Teachers_Tbl> Teachers_Tbl { get; set; }
         public virtual DbSet<Users_Tbl> Users_Tbl { get; set; }
+        public virtual DbSet<RegistrationToRoute_Tbl> RegistrationToRoute_Tbl { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

@@ -67,7 +67,7 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="RouteCode" Type="int" Nullable="false" />
     <Property Name="strudentCode" Type="int" Nullable="false" />
     <Property Name="year" Type="int" Nullable="false" />

@@ -18,10 +18,10 @@ namespace DAL
         public Route_Tbl()
         {
             this.Courses_Tbl = new HashSet<Courses_Tbl>();
-            this.RegistrationToRoute_Tbl = new HashSet<RegistrationToRoute_Tbl>();
             this.SpecializationsToRoutes_Tbl = new HashSet<SpecializationsToRoutes_Tbl>();
             this.Specialization_Tbl = new HashSet<Specialization_Tbl>();
             this.Specialization_Tbl1 = new HashSet<Specialization_Tbl>();
+            this.RegistrationToRoute_Tbl = new HashSet<RegistrationToRoute_Tbl>();
         }
     
         public int routeCode { get; set; }
@@ -33,12 +33,12 @@ namespace DAL
         public virtual ICollection<Courses_Tbl> Courses_Tbl { get; set; }
         public virtual Diplomas_Tbl Diplomas_Tbl { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<RegistrationToRoute_Tbl> RegistrationToRoute_Tbl { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<SpecializationsToRoutes_Tbl> SpecializationsToRoutes_Tbl { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Specialization_Tbl> Specialization_Tbl { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Specialization_Tbl> Specialization_Tbl1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<RegistrationToRoute_Tbl> RegistrationToRoute_Tbl { get; set; }
     }
 }

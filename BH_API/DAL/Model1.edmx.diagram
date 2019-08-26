@@ -12,7 +12,6 @@
         <EntityTypeShape EntityType="BeitHamoreProjectModel.Diplomas_Tbl" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BeitHamoreProjectModel.Domains_Tbl" Width="1.5" PointX="10.5" PointY="18.125" IsExpanded="true" />
         <EntityTypeShape EntityType="BeitHamoreProjectModel.RegistrationToCourse_Tbl" Width="1.5" PointX="11" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="BeitHamoreProjectModel.RegistrationToRoute_Tbl" Width="1.5" PointX="5.25" PointY="13.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BeitHamoreProjectModel.registrationzationToSpeciali_Tbl" Width="1.5" PointX="7.5" PointY="16.625" IsExpanded="true" />
         <EntityTypeShape EntityType="BeitHamoreProjectModel.Route_Tbl" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
         <EntityTypeShape EntityType="BeitHamoreProjectModel.Specialization_Tbl" Width="1.5" PointX="5.25" PointY="16.125" IsExpanded="true" />
@@ -32,7 +31,6 @@
         <AssociationConnector Association="BeitHamoreProjectModel.FK_DiplomaHours_Tbl_Domains_Tbl" ManuallyRouted="false" />
         <AssociationConnector Association="BeitHamoreProjectModel.FK_DiplomaHours_Tbl_Specialization_Tbl" ManuallyRouted="false" />
         <AssociationConnector Association="BeitHamoreProjectModel.FK_Route_Tbl_Diplomas_Tbl" ManuallyRouted="false" />
-        <AssociationConnector Association="BeitHamoreProjectModel.FK_RegistrationToRoute_Tbl_Route_Tbl" ManuallyRouted="false" />
         <AssociationConnector Association="BeitHamoreProjectModel.FK_registrationzationToSpeciali_Tbl_Specialization_Tbl" ManuallyRouted="false" />
         <AssociationConnector Association="BeitHamoreProjectModel.FK_SpecializationsToRoutes_Tbl_Route_Tbl" ManuallyRouted="false" />
         <AssociationConnector Association="BeitHamoreProjectModel.FK_SpecializationTbl_Route_Tbl" ManuallyRouted="false" />
@@ -41,6 +39,8 @@
         <AssociationConnector Association="BeitHamoreProjectModel.FK_StatusesToUsers_Tbl_Status_Tbl" ManuallyRouted="false" />
         <AssociationConnector Association="BeitHamoreProjectModel.FK_StatusesToUsers_Tbl_Users_Tbl" ManuallyRouted="false" />
         <AssociationConnector Association="BeitHamoreProjectModel.FK_Teachers_Tbl_Users_Tbl" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="BeitHamoreProjectModel.RegistrationToRoute_Tbl" Width="1.5" PointX="5.25" PointY="11.625" />
+        <AssociationConnector Association="BeitHamoreProjectModel.FK_RegistrationToRoute_Tbl_Route_Tbl" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

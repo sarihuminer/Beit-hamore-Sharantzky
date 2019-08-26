@@ -85,6 +85,7 @@
     <Compile Include="Converssins\UserDetailsDTOConverssion.cs" />
     <Compile Include="CourseBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RegisterToRoutesBLL.cs" />
     <Compile Include="RouteBLL.cs" />
     <Compile Include="SpecializationBLL.cs" />
     <Compile Include="UsersBLL.cs" />

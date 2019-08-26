@@ -23,7 +23,7 @@ export class UserService {
 register(user:User){
 return this.http.post(this.basicURL+"/register",user);
 }
-getUserById(tz:string):Observable<any>{
+getUserById(tz:string):Observable<User>{
   
   return this.http.get<User>(this.basicURL+"/getUser/"+tz);
 
