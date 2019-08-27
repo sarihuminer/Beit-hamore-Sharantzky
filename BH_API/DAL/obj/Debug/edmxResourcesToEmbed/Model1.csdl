@@ -145,16 +145,6 @@
     <NavigationProperty Name="Status_Tbl" Relationship="Self.FK_StatusesToUsers_Tbl_Status_Tbl" FromRole="StatusesToUsers_Tbl" ToRole="Status_Tbl" />
     <NavigationProperty Name="Users_Tbl" Relationship="Self.FK_StatusesToUsers_Tbl_Users_Tbl" FromRole="StatusesToUsers_Tbl" ToRole="Users_Tbl" />
   </EntityType>
-  <EntityType Name="sysdiagram">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-  </EntityType>
   <EntityType Name="Teachers_Tbl">
     <Key>
       <PropertyRef Name="teacherId" />
@@ -413,7 +403,6 @@
     <EntitySet Name="SpecializationsToRoutes_Tbl" EntityType="Self.SpecializationsToRoutes_Tbl" />
     <EntitySet Name="Status_Tbl" EntityType="Self.Status_Tbl" />
     <EntitySet Name="StatusesToUsers_Tbl" EntityType="Self.StatusesToUsers_Tbl" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
     <EntitySet Name="Teachers_Tbl" EntityType="Self.Teachers_Tbl" />
     <EntitySet Name="Users_Tbl" EntityType="Self.Users_Tbl" />
     <AssociationSet Name="FK_Courses_Tbl_Route_Tbl" Association="Self.FK_Courses_Tbl_Route_Tbl">
@@ -539,9 +528,9 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="RouteCode" Type="Int32" Nullable="false" />
-    <Property Name="strudentCode" Type="Int32" Nullable="false" />
+    <Property Name="studentCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="year" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Route_Tbl" Relationship="BeitHamoreProjectModel.FK_RegistrationToRoute_Tbl_Route_Tbl" FromRole="RegistrationToRoute_Tbl" ToRole="Route_Tbl" />
   </EntityType>

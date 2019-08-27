@@ -13,12 +13,12 @@ namespace BH_API.Controllers
     [EnableCors(origins: "*", headers: "*", methods: "*")]
     public class RegisterToRoutesController : ApiController
     {
-        //[HttpGet]
-        //[Route("get-routes{tz}")]
-        //public IHttpActionResult GetRoutes([FromUri]string tz)
-        //{
-        //    return Ok(RegisterToRoutesBLL.GetRoutes(tz));
-        //}
+        [HttpGet]
+        [Route("get-routes/{tz}")]
+        public IHttpActionResult GetglobalDetails([FromUri]string tz)
+        {
+            return Ok(RegisterToRoutesBLL.GetglobalDetails(tz));
+        }
 
     }
 }

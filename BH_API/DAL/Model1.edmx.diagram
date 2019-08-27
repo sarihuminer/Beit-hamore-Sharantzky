@@ -7,18 +7,17 @@
       <Diagram DiagramId="2d48b19ddf3f445b888a8607072889ee" Name="Diagram1">
         <EntityTypeShape EntityType="BeitHamoreProjectModel.Courses_Tbl" Width="1.5" PointX="10.5" PointY="13.5" IsExpanded="true" />
         <EntityTypeShape EntityType="BeitHamoreProjectModel.CourseTimes_Tbl" Width="1.5" PointX="8.75" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="BeitHamoreProjectModel.CourseToDomain_Tbl" Width="1.5" PointX="12.75" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeitHamoreProjectModel.CourseToDomain_Tbl" Width="1.5" PointX="13.75" PointY="13.625" IsExpanded="true" />
         <EntityTypeShape EntityType="BeitHamoreProjectModel.DiplomaHours_Tbl" Width="1.5" PointX="7.5" PointY="12.375" IsExpanded="true" />
         <EntityTypeShape EntityType="BeitHamoreProjectModel.Diplomas_Tbl" Width="1.5" PointX="0.75" PointY="8.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="BeitHamoreProjectModel.Domains_Tbl" Width="1.5" PointX="10.5" PointY="18.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BeitHamoreProjectModel.RegistrationToCourse_Tbl" Width="1.5" PointX="11" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeitHamoreProjectModel.Domains_Tbl" Width="1.5" PointX="11.25" PointY="18" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeitHamoreProjectModel.RegistrationToCourse_Tbl" Width="2.625" PointX="11.375" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="BeitHamoreProjectModel.registrationzationToSpeciali_Tbl" Width="1.5" PointX="7.5" PointY="16.625" IsExpanded="true" />
         <EntityTypeShape EntityType="BeitHamoreProjectModel.Route_Tbl" Width="1.5" PointX="3" PointY="11.125" IsExpanded="true" />
         <EntityTypeShape EntityType="BeitHamoreProjectModel.Specialization_Tbl" Width="1.5" PointX="5.25" PointY="16.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="BeitHamoreProjectModel.SpecializationsToRoutes_Tbl" Width="1.5" PointX="10.5" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="BeitHamoreProjectModel.SpecializationsToRoutes_Tbl" Width="3.25" PointX="11.375" PointY="10.125" IsExpanded="true" />
         <EntityTypeShape EntityType="BeitHamoreProjectModel.Status_Tbl" Width="1.5" PointX="6" PointY="4.25" IsExpanded="true" />
         <EntityTypeShape EntityType="BeitHamoreProjectModel.StatusesToUsers_Tbl" Width="1.5" PointX="8.25" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="BeitHamoreProjectModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="BeitHamoreProjectModel.Teachers_Tbl" Width="1.5" PointX="8.25" PointY="8" IsExpanded="true" />
         <EntityTypeShape EntityType="BeitHamoreProjectModel.Users_Tbl" Width="1.5" PointX="6" PointY="7.375" IsExpanded="true" />
         <AssociationConnector Association="BeitHamoreProjectModel.FK_Courses_Tbl_Route_Tbl" ManuallyRouted="false" />

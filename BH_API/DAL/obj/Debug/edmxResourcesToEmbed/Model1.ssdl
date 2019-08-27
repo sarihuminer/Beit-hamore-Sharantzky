@@ -67,9 +67,9 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="RouteCode" Type="int" Nullable="false" />
-    <Property Name="strudentCode" Type="int" Nullable="false" />
+    <Property Name="studentCode" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="year" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="registrationzationToSpeciali_Tbl">
@@ -120,16 +120,6 @@
     <Property Name="userId" Type="int" Nullable="false" />
     <Property Name="statusId" Type="int" Nullable="false" />
     <Property Name="isApproved" Type="int" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="Teachers_Tbl">
     <Key>
@@ -429,7 +419,6 @@
     <EntitySet Name="SpecializationsToRoutes_Tbl" EntityType="Self.SpecializationsToRoutes_Tbl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Status_Tbl" EntityType="Self.Status_Tbl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="StatusesToUsers_Tbl" EntityType="Self.StatusesToUsers_Tbl" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Teachers_Tbl" EntityType="Self.Teachers_Tbl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users_Tbl" EntityType="Self.Users_Tbl" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Courses_Tbl_Route_Tbl" Association="Self.FK_Courses_Tbl_Route_Tbl">

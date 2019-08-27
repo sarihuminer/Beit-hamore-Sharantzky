@@ -40,7 +40,6 @@ namespace DAL
         public virtual DbSet<SpecializationsToRoutes_Tbl> SpecializationsToRoutes_Tbl { get; set; }
         public virtual DbSet<Status_Tbl> Status_Tbl { get; set; }
         public virtual DbSet<StatusesToUsers_Tbl> StatusesToUsers_Tbl { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Teachers_Tbl> Teachers_Tbl { get; set; }
         public virtual DbSet<Users_Tbl> Users_Tbl { get; set; }
         public virtual DbSet<RegistrationToRoute_Tbl> RegistrationToRoute_Tbl { get; set; }

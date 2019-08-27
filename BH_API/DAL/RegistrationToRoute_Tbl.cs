@@ -14,9 +14,9 @@ namespace DAL
     
     public partial class RegistrationToRoute_Tbl
     {
-        public string Id { get; set; }
+        public int Id { get; set; }
         public int RouteCode { get; set; }
-        public int strudentCode { get; set; }
+        public string studentCode { get; set; }
         public int year { get; set; }
     
         public virtual Route_Tbl Route_Tbl { get; set; }
