@@ -39,6 +39,15 @@ namespace BLL
                         userGlobalDetailsDTO.ListSpealitation.AddRange(SpecializationDTOConverssion.ConvertSpecializationTblToDTO(x));
                     }
                 }
+                userGlobalDetailsDTO.ListCourses = new List<CourseDTO>();
+                foreach (var item in userGlobalDetailsDTO.ListSpealitation)
+                {
+                    List<Courses_Tbl> x = db.Courses_Tbl.Where(c => c.specializationCode == item.specializationCode).ToList();
+                    if (x.Count > 0)
+                    {
+                        userGlobalDetailsDTO.ListCourses.AddRange(CourseDTOConverssion.ConvertCourseTblToDTO(x));
+                    }
+                }    
                //db.Specialization_Tbl.Where(
                //     sp => listRoutesTbl.Any(
                //         route=>

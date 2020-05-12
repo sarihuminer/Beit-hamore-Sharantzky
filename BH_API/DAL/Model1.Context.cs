@@ -34,15 +34,16 @@ namespace DAL
         public virtual DbSet<Diplomas_Tbl> Diplomas_Tbl { get; set; }
         public virtual DbSet<Domains_Tbl> Domains_Tbl { get; set; }
         public virtual DbSet<RegistrationToCourse_Tbl> RegistrationToCourse_Tbl { get; set; }
+        public virtual DbSet<RegistrationToRoute_Tbl> RegistrationToRoute_Tbl { get; set; }
         public virtual DbSet<registrationzationToSpeciali_Tbl> registrationzationToSpeciali_Tbl { get; set; }
         public virtual DbSet<Route_Tbl> Route_Tbl { get; set; }
         public virtual DbSet<Specialization_Tbl> Specialization_Tbl { get; set; }
         public virtual DbSet<SpecializationsToRoutes_Tbl> SpecializationsToRoutes_Tbl { get; set; }
         public virtual DbSet<Status_Tbl> Status_Tbl { get; set; }
         public virtual DbSet<StatusesToUsers_Tbl> StatusesToUsers_Tbl { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Teachers_Tbl> Teachers_Tbl { get; set; }
         public virtual DbSet<Users_Tbl> Users_Tbl { get; set; }
-        public virtual DbSet<RegistrationToRoute_Tbl> RegistrationToRoute_Tbl { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
@@ -99,7 +100,7 @@ namespace DAL
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_dropdiagram", diagramnameParameter, owner_idParameter);
         }
     
-        public virtual ObjectResult<sp_helpdiagramdefinition_Result> sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
+        public virtual int sp_helpdiagramdefinition(string diagramname, Nullable<int> owner_id)
         {
             var diagramnameParameter = diagramname != null ?
                 new ObjectParameter("diagramname", diagramname) :
@@ -109,10 +110,10 @@ namespace DAL
                 new ObjectParameter("owner_id", owner_id) :
                 new ObjectParameter("owner_id", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagramdefinition_Result>("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_helpdiagramdefinition", diagramnameParameter, owner_idParameter);
         }
     
-        public virtual ObjectResult<sp_helpdiagrams_Result> sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
+        public virtual int sp_helpdiagrams(string diagramname, Nullable<int> owner_id)
         {
             var diagramnameParameter = diagramname != null ?
                 new ObjectParameter("diagramname", diagramname) :
@@ -122,7 +123,7 @@ namespace DAL
                 new ObjectParameter("owner_id", owner_id) :
                 new ObjectParameter("owner_id", typeof(int));
     
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<sp_helpdiagrams_Result>("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_helpdiagrams", diagramnameParameter, owner_idParameter);
         }
     
         public virtual int sp_renamediagram(string diagramname, Nullable<int> owner_id, string new_diagramname)

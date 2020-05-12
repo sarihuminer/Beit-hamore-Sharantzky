@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="BeitHamoreProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="BeitHamoreProject2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="Courses_Tbl">
     <Key>
       <PropertyRef Name="courseId" />
@@ -120,6 +120,16 @@
     <Property Name="userId" Type="int" Nullable="false" />
     <Property Name="statusId" Type="int" Nullable="false" />
     <Property Name="isApproved" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="Teachers_Tbl">
     <Key>
@@ -404,7 +414,7 @@
     <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
   </Function>
   <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-  <EntityContainer Name="BeitHamoreProjectModelStoreContainer">
+  <EntityContainer Name="BeitHamoreProject2ModelStoreContainer">
     <EntitySet Name="Courses_Tbl" EntityType="Self.Courses_Tbl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CourseTimes_Tbl" EntityType="Self.CourseTimes_Tbl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CourseToDomain_Tbl" EntityType="Self.CourseToDomain_Tbl" Schema="dbo" store:Type="Tables" />
@@ -419,6 +429,7 @@
     <EntitySet Name="SpecializationsToRoutes_Tbl" EntityType="Self.SpecializationsToRoutes_Tbl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Status_Tbl" EntityType="Self.Status_Tbl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="StatusesToUsers_Tbl" EntityType="Self.StatusesToUsers_Tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Teachers_Tbl" EntityType="Self.Teachers_Tbl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Users_Tbl" EntityType="Self.Users_Tbl" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_Courses_Tbl_Route_Tbl" Association="Self.FK_Courses_Tbl_Route_Tbl">

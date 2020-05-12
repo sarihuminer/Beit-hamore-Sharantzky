@@ -38,3 +38,4 @@ export class CourseService {
      return this.http.get<Course[]>(environment.url + "courses/getCourseByspealitation/"+spealitationCode);
    }
 }
+  

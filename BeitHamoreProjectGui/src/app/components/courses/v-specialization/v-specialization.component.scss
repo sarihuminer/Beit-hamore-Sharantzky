@@ -2,7 +2,7 @@ $boxSpacing: 23px;
 $gridSize: 200px;
 $cornerRadius: $gridSize/2.1;
 .container{
-  direction: ltr;
+  direction: rtl;
 }
 body {
   margin: $boxSpacing;

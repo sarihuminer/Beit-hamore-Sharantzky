@@ -14,7 +14,7 @@ namespace BH_API.Controllers
     public class RegisterToRoutesController : ApiController
     {
         [HttpGet]
-        [Route("get-routes/{tz}")]
+        [Route("GetglobalDetailsUser/{tz}")]
         public IHttpActionResult GetglobalDetails([FromUri]string tz)
         {
             return Ok(RegisterToRoutesBLL.GetglobalDetails(tz));

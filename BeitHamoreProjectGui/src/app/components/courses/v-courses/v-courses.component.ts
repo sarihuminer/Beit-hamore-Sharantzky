@@ -15,6 +15,8 @@ export class VCoursesComponent implements OnInit {
 
 }
   ngOnInit() {
+    debugger;
+    console.log('c-v');
     this.route.params.subscribe(x => this.spealitationCode = x.id);
     this.courseServise.getCourseByspealitation(this.spealitationCode).subscribe(res=>{
       if(res)

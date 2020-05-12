@@ -11,6 +11,7 @@ namespace DTO
         public UserDetailsDTO UserDetails { get; set; }
         public List<RouteDTO> ListRoutes { get; set; }
         public List<SpealitationDTO> ListSpealitation { get; set; }
+        public List<CourseDTO> ListCourses { get; set; }
 
     }
     

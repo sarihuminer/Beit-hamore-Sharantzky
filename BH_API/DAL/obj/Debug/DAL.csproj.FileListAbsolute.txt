@@ -195,7 +195,7 @@ C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DAL\bin\Debug\Newtonsoft.
 C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DAL\bin\Debug\System.Net.Http.Formatting.xml
 C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DAL\bin\Debug\System.Web.Http.xml
 C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DAL\bin\Debug\System.Web.Http.Cors.xml
-C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DAL\obj\Debug\DAL.dll
 C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DAL\obj\Debug\DAL.pdb
+C:\Users\מחשב\Documents\beit-hamore-project\BH_API\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

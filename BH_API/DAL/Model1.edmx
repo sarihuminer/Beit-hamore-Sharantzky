@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="BeitHamoreProjectModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="BeitHamoreProject2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Courses_Tbl">
           <Key>
             <PropertyRef Name="courseId" />
@@ -125,6 +125,16 @@
           <Property Name="userId" Type="int" Nullable="false" />
           <Property Name="statusId" Type="int" Nullable="false" />
           <Property Name="isApproved" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="Teachers_Tbl">
           <Key>
@@ -409,7 +419,7 @@
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <EntityContainer Name="BeitHamoreProjectModelStoreContainer">
+        <EntityContainer Name="BeitHamoreProject2ModelStoreContainer">
           <EntitySet Name="Courses_Tbl" EntityType="Self.Courses_Tbl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CourseTimes_Tbl" EntityType="Self.CourseTimes_Tbl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CourseToDomain_Tbl" EntityType="Self.CourseToDomain_Tbl" Schema="dbo" store:Type="Tables" />
@@ -424,6 +434,7 @@
           <EntitySet Name="SpecializationsToRoutes_Tbl" EntityType="Self.SpecializationsToRoutes_Tbl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Status_Tbl" EntityType="Self.Status_Tbl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StatusesToUsers_Tbl" EntityType="Self.StatusesToUsers_Tbl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Teachers_Tbl" EntityType="Self.Teachers_Tbl" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Users_Tbl" EntityType="Self.Users_Tbl" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Courses_Tbl_Route_Tbl" Association="Self.FK_Courses_Tbl_Route_Tbl">
@@ -503,10 +514,11 @@
             <End Role="Teachers_Tbl" EntitySet="Teachers_Tbl" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="BeitHamoreProjectModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="BeitHamoreProject2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="Courses_Tbl">
           <Key>
             <PropertyRef Name="courseId" />
@@ -585,6 +597,16 @@
           <Property Name="StudentCode" Type="Int32" Nullable="false" />
           <NavigationProperty Name="CourseTimes_Tbl" Relationship="Self.FK_RegistrationToCourse_Tbl_CourseTimes_Tbl" FromRole="RegistrationToCourse_Tbl" ToRole="CourseTimes_Tbl" />
         </EntityType>
+        <EntityType Name="RegistrationToRoute_Tbl">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RouteCode" Type="Int32" Nullable="false" />
+          <Property Name="studentCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="year" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Route_Tbl" Relationship="Self.FK_RegistrationToRoute_Tbl_Route_Tbl" FromRole="RegistrationToRoute_Tbl" ToRole="Route_Tbl" />
+        </EntityType>
         <EntityType Name="registrationzationToSpeciali_Tbl">
           <Key>
             <PropertyRef Name="id" />
@@ -601,13 +623,13 @@
           <Property Name="routeCode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="routeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="diplomaID" Type="Int32" />
+          <Property Name="img" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Courses_Tbl" Relationship="Self.FK_Courses_Tbl_Route_Tbl" FromRole="Route_Tbl" ToRole="Courses_Tbl" />
           <NavigationProperty Name="Diplomas_Tbl" Relationship="Self.FK_Route_Tbl_Diplomas_Tbl" FromRole="Route_Tbl" ToRole="Diplomas_Tbl" />
+          <NavigationProperty Name="RegistrationToRoute_Tbl" Relationship="Self.FK_RegistrationToRoute_Tbl_Route_Tbl" FromRole="Route_Tbl" ToRole="RegistrationToRoute_Tbl" />
           <NavigationProperty Name="SpecializationsToRoutes_Tbl" Relationship="Self.FK_SpecializationsToRoutes_Tbl_Route_Tbl" FromRole="Route_Tbl" ToRole="SpecializationsToRoutes_Tbl" />
           <NavigationProperty Name="Specialization_Tbl" Relationship="Self.FK_SpecializationTbl_Route_Tbl" FromRole="Route_Tbl" ToRole="Specialization_Tbl" />
           <NavigationProperty Name="Specialization_Tbl1" Relationship="Self.FK_SpecializationTbl_Route_Tbl1" FromRole="Route_Tbl" ToRole="Specialization_Tbl" />
-          <Property Name="img" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="RegistrationToRoute_Tbl" Relationship="BeitHamoreProjectModel.FK_RegistrationToRoute_Tbl_Route_Tbl" FromRole="Route_Tbl" ToRole="RegistrationToRoute_Tbl" />
         </EntityType>
         <EntityType Name="Specialization_Tbl">
           <Key>
@@ -651,6 +673,16 @@
           <Property Name="isApproved" Type="Int32" />
           <NavigationProperty Name="Status_Tbl" Relationship="Self.FK_StatusesToUsers_Tbl_Status_Tbl" FromRole="StatusesToUsers_Tbl" ToRole="Status_Tbl" />
           <NavigationProperty Name="Users_Tbl" Relationship="Self.FK_StatusesToUsers_Tbl_Users_Tbl" FromRole="StatusesToUsers_Tbl" ToRole="Users_Tbl" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="Teachers_Tbl">
           <Key>
@@ -800,6 +832,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_RegistrationToRoute_Tbl_Route_Tbl">
+          <End Role="Route_Tbl" Type="Self.Route_Tbl" Multiplicity="1" />
+          <End Role="RegistrationToRoute_Tbl" Type="Self.RegistrationToRoute_Tbl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Route_Tbl">
+              <PropertyRef Name="routeCode" />
+            </Principal>
+            <Dependent Role="RegistrationToRoute_Tbl">
+              <PropertyRef Name="RouteCode" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_registrationzationToSpeciali_Tbl_Specialization_Tbl">
           <End Role="Specialization_Tbl" Type="Self.Specialization_Tbl" Multiplicity="1" />
           <End Role="registrationzationToSpeciali_Tbl" Type="Self.registrationzationToSpeciali_Tbl" Multiplicity="*" />
@@ -904,12 +948,14 @@
           <EntitySet Name="Diplomas_Tbl" EntityType="Self.Diplomas_Tbl" />
           <EntitySet Name="Domains_Tbl" EntityType="Self.Domains_Tbl" />
           <EntitySet Name="RegistrationToCourse_Tbl" EntityType="Self.RegistrationToCourse_Tbl" />
+          <EntitySet Name="RegistrationToRoute_Tbl" EntityType="Self.RegistrationToRoute_Tbl" />
           <EntitySet Name="registrationzationToSpeciali_Tbl" EntityType="Self.registrationzationToSpeciali_Tbl" />
           <EntitySet Name="Route_Tbl" EntityType="Self.Route_Tbl" />
           <EntitySet Name="Specialization_Tbl" EntityType="Self.Specialization_Tbl" />
           <EntitySet Name="SpecializationsToRoutes_Tbl" EntityType="Self.SpecializationsToRoutes_Tbl" />
           <EntitySet Name="Status_Tbl" EntityType="Self.Status_Tbl" />
           <EntitySet Name="StatusesToUsers_Tbl" EntityType="Self.StatusesToUsers_Tbl" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Teachers_Tbl" EntityType="Self.Teachers_Tbl" />
           <EntitySet Name="Users_Tbl" EntityType="Self.Users_Tbl" />
           <AssociationSet Name="FK_Courses_Tbl_Route_Tbl" Association="Self.FK_Courses_Tbl_Route_Tbl">
@@ -951,6 +997,10 @@
           <AssociationSet Name="FK_Route_Tbl_Diplomas_Tbl" Association="Self.FK_Route_Tbl_Diplomas_Tbl">
             <End Role="Diplomas_Tbl" EntitySet="Diplomas_Tbl" />
             <End Role="Route_Tbl" EntitySet="Route_Tbl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RegistrationToRoute_Tbl_Route_Tbl" Association="Self.FK_RegistrationToRoute_Tbl_Route_Tbl">
+            <End Role="Route_Tbl" EntitySet="Route_Tbl" />
+            <End Role="RegistrationToRoute_Tbl" EntitySet="RegistrationToRoute_Tbl" />
           </AssociationSet>
           <AssociationSet Name="FK_registrationzationToSpeciali_Tbl_Specialization_Tbl" Association="Self.FK_registrationzationToSpeciali_Tbl_Specialization_Tbl">
             <End Role="Specialization_Tbl" EntitySet="Specialization_Tbl" />
@@ -1000,11 +1050,11 @@
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(BeitHamoreProjectModel.sp_helpdiagramdefinition_Result)">
+          <FunctionImport Name="sp_helpdiagramdefinition">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(BeitHamoreProjectModel.sp_helpdiagrams_Result)">
+          <FunctionImport Name="sp_helpdiagrams">
             <Parameter Name="diagramname" Mode="In" Type="String" />
             <Parameter Name="owner_id" Mode="In" Type="Int32" />
           </FunctionImport>
@@ -1014,53 +1064,15 @@
             <Parameter Name="new_diagramname" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="sp_upgraddiagrams" />
-          <EntitySet Name="RegistrationToRoute_Tbl" EntityType="BeitHamoreProjectModel.RegistrationToRoute_Tbl" />
-          <AssociationSet Name="FK_RegistrationToRoute_Tbl_Route_Tbl" Association="BeitHamoreProjectModel.FK_RegistrationToRoute_Tbl_Route_Tbl">
-            <End Role="Route_Tbl" EntitySet="Route_Tbl" />
-            <End Role="RegistrationToRoute_Tbl" EntitySet="RegistrationToRoute_Tbl" />
-          </AssociationSet>
         </EntityContainer>
-        <ComplexType Name="sp_helpdiagramdefinition_Result">
-          <Property Type="Int32" Name="version" Nullable="true" />
-          <Property Type="Binary" Name="definition" Nullable="true" />
-        </ComplexType>
-        <ComplexType Name="sp_helpdiagrams_Result">
-          <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
-          <Property Type="Int32" Name="ID" Nullable="false" />
-          <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
-          <Property Type="Int32" Name="OwnerID" Nullable="false" />
-        </ComplexType>
-        <EntityType Name="RegistrationToRoute_Tbl">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RouteCode" Type="Int32" Nullable="false" />
-          <Property Name="studentCode" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="year" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Route_Tbl" Relationship="BeitHamoreProjectModel.FK_RegistrationToRoute_Tbl_Route_Tbl" FromRole="RegistrationToRoute_Tbl" ToRole="Route_Tbl" />
-        </EntityType>
-        <Association Name="FK_RegistrationToRoute_Tbl_Route_Tbl">
-          <End Type="BeitHamoreProjectModel.Route_Tbl" Role="Route_Tbl" Multiplicity="1" />
-          <End Type="BeitHamoreProjectModel.RegistrationToRoute_Tbl" Role="RegistrationToRoute_Tbl" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Route_Tbl">
-              <PropertyRef Name="routeCode" />
-            </Principal>
-            <Dependent Role="RegistrationToRoute_Tbl">
-              <PropertyRef Name="RouteCode" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BeitHamoreProjectModelStoreContainer" CdmEntityContainer="BeitHamoreProjectEntities">
+        <EntityContainerMapping StorageEntityContainer="BeitHamoreProject2ModelStoreContainer" CdmEntityContainer="BeitHamoreProjectEntities">
           <EntitySetMapping Name="Courses_Tbl">
-            <EntityTypeMapping TypeName="BeitHamoreProjectModel.Courses_Tbl">
+            <EntityTypeMapping TypeName="BeitHamoreProject2Model.Courses_Tbl">
               <MappingFragment StoreEntitySet="Courses_Tbl">
                 <ScalarProperty Name="courseId" ColumnName="courseId" />
                 <ScalarProperty Name="courseName" ColumnName="courseName" />
@@ -1072,7 +1084,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CourseTimes_Tbl">
-            <EntityTypeMapping TypeName="BeitHamoreProjectModel.CourseTimes_Tbl">
+            <EntityTypeMapping TypeName="BeitHamoreProject2Model.CourseTimes_Tbl">
               <MappingFragment StoreEntitySet="CourseTimes_Tbl">
                 <ScalarProperty Name="courseTimesId" ColumnName="courseTimesId" />
                 <ScalarProperty Name="courseCode" ColumnName="courseCode" />
@@ -1085,7 +1097,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="CourseToDomain_Tbl">
-            <EntityTypeMapping TypeName="BeitHamoreProjectModel.CourseToDomain_Tbl">
+            <EntityTypeMapping TypeName="BeitHamoreProject2Model.CourseToDomain_Tbl">
               <MappingFragment StoreEntitySet="CourseToDomain_Tbl">
                 <ScalarProperty Name="domainCourseId" ColumnName="domainCourseId" />
                 <ScalarProperty Name="courseId" ColumnName="courseId" />
@@ -1094,7 +1106,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="DiplomaHours_Tbl">
-            <EntityTypeMapping TypeName="BeitHamoreProjectModel.DiplomaHours_Tbl">
+            <EntityTypeMapping TypeName="BeitHamoreProject2Model.DiplomaHours_Tbl">
               <MappingFragment StoreEntitySet="DiplomaHours_Tbl">
                 <ScalarProperty Name="diplomaHoursId" ColumnName="diplomaHoursId" />
                 <ScalarProperty Name="diplomaId" ColumnName="diplomaId" />
@@ -1105,7 +1117,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Diplomas_Tbl">
-            <EntityTypeMapping TypeName="BeitHamoreProjectModel.Diplomas_Tbl">
+            <EntityTypeMapping TypeName="BeitHamoreProject2Model.Diplomas_Tbl">
               <MappingFragment StoreEntitySet="Diplomas_Tbl">
                 <ScalarProperty Name="diplomaID" ColumnName="diplomaID" />
                 <ScalarProperty Name="diplomaName" ColumnName="diplomaName" />
@@ -1113,7 +1125,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Domains_Tbl">
-            <EntityTypeMapping TypeName="BeitHamoreProjectModel.Domains_Tbl">
+            <EntityTypeMapping TypeName="BeitHamoreProject2Model.Domains_Tbl">
               <MappingFragment StoreEntitySet="Domains_Tbl">
                 <ScalarProperty Name="domainId" ColumnName="domainId" />
                 <ScalarProperty Name="domainName" ColumnName="domainName" />
@@ -1121,7 +1133,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="RegistrationToCourse_Tbl">
-            <EntityTypeMapping TypeName="BeitHamoreProjectModel.RegistrationToCourse_Tbl">
+            <EntityTypeMapping TypeName="BeitHamoreProject2Model.RegistrationToCourse_Tbl">
               <MappingFragment StoreEntitySet="RegistrationToCourse_Tbl">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="CourseTimeCode" ColumnName="CourseTimeCode" />
@@ -1129,8 +1141,18 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="RegistrationToRoute_Tbl">
+            <EntityTypeMapping TypeName="BeitHamoreProject2Model.RegistrationToRoute_Tbl">
+              <MappingFragment StoreEntitySet="RegistrationToRoute_Tbl">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="RouteCode" ColumnName="RouteCode" />
+                <ScalarProperty Name="studentCode" ColumnName="studentCode" />
+                <ScalarProperty Name="year" ColumnName="year" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="registrationzationToSpeciali_Tbl">
-            <EntityTypeMapping TypeName="BeitHamoreProjectModel.registrationzationToSpeciali_Tbl">
+            <EntityTypeMapping TypeName="BeitHamoreProject2Model.registrationzationToSpeciali_Tbl">
               <MappingFragment StoreEntitySet="registrationzationToSpeciali_Tbl">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="specializationCode" ColumnName="specializationCode" />
@@ -1139,17 +1161,17 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Route_Tbl">
-            <EntityTypeMapping TypeName="BeitHamoreProjectModel.Route_Tbl">
+            <EntityTypeMapping TypeName="BeitHamoreProject2Model.Route_Tbl">
               <MappingFragment StoreEntitySet="Route_Tbl">
-                <ScalarProperty Name="img" ColumnName="img" />
                 <ScalarProperty Name="routeCode" ColumnName="routeCode" />
                 <ScalarProperty Name="routeName" ColumnName="routeName" />
                 <ScalarProperty Name="diplomaID" ColumnName="diplomaID" />
+                <ScalarProperty Name="img" ColumnName="img" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Specialization_Tbl">
-            <EntityTypeMapping TypeName="BeitHamoreProjectModel.Specialization_Tbl">
+            <EntityTypeMapping TypeName="BeitHamoreProject2Model.Specialization_Tbl">
               <MappingFragment StoreEntitySet="Specialization_Tbl">
                 <ScalarProperty Name="specializationCode" ColumnName="specializationCode" />
                 <ScalarProperty Name="routeCode" ColumnName="routeCode" />
@@ -1158,7 +1180,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SpecializationsToRoutes_Tbl">
-            <EntityTypeMapping TypeName="BeitHamoreProjectModel.SpecializationsToRoutes_Tbl">
+            <EntityTypeMapping TypeName="BeitHamoreProject2Model.SpecializationsToRoutes_Tbl">
               <MappingFragment StoreEntitySet="SpecializationsToRoutes_Tbl">
                 <ScalarProperty Name="specializationRouteId" ColumnName="specializationRouteId" />
                 <ScalarProperty Name="specializationId" ColumnName="specializationId" />
@@ -1167,7 +1189,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Status_Tbl">
-            <EntityTypeMapping TypeName="BeitHamoreProjectModel.Status_Tbl">
+            <EntityTypeMapping TypeName="BeitHamoreProject2Model.Status_Tbl">
               <MappingFragment StoreEntitySet="Status_Tbl">
                 <ScalarProperty Name="statusId" ColumnName="statusId" />
                 <ScalarProperty Name="nameStatus" ColumnName="nameStatus" />
@@ -1175,7 +1197,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="StatusesToUsers_Tbl">
-            <EntityTypeMapping TypeName="BeitHamoreProjectModel.StatusesToUsers_Tbl">
+            <EntityTypeMapping TypeName="BeitHamoreProject2Model.StatusesToUsers_Tbl">
               <MappingFragment StoreEntitySet="StatusesToUsers_Tbl">
                 <ScalarProperty Name="StatusUserId" ColumnName="StatusUserId" />
                 <ScalarProperty Name="userId" ColumnName="userId" />
@@ -1184,8 +1206,19 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="BeitHamoreProject2Model.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Teachers_Tbl">
-            <EntityTypeMapping TypeName="BeitHamoreProjectModel.Teachers_Tbl">
+            <EntityTypeMapping TypeName="BeitHamoreProject2Model.Teachers_Tbl">
               <MappingFragment StoreEntitySet="Teachers_Tbl">
                 <ScalarProperty Name="teacherId" ColumnName="teacherId" />
                 <ScalarProperty Name="userId" ColumnName="userId" />
@@ -1195,7 +1228,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="Users_Tbl">
-            <EntityTypeMapping TypeName="BeitHamoreProjectModel.Users_Tbl">
+            <EntityTypeMapping TypeName="BeitHamoreProject2Model.Users_Tbl">
               <MappingFragment StoreEntitySet="Users_Tbl">
                 <ScalarProperty Name="userId" ColumnName="userId" />
                 <ScalarProperty Name="passwordSHA256" ColumnName="passwordSHA256" />
@@ -1210,40 +1243,13 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="BeitHamoreProjectModel.Store.sp_alterdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="BeitHamoreProjectModel.Store.sp_creatediagram" />
-          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="BeitHamoreProjectModel.Store.sp_dropdiagram" />
-          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="BeitHamoreProjectModel.Store.sp_helpdiagramdefinition">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="BeitHamoreProjectModel.sp_helpdiagramdefinition_Result">
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="BeitHamoreProjectModel.Store.sp_helpdiagrams">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="BeitHamoreProjectModel.sp_helpdiagrams_Result">
-                <ScalarProperty Name="Database" ColumnName="Database" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="Owner" ColumnName="Owner" />
-                <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="BeitHamoreProjectModel.Store.sp_renamediagram" />
-          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="BeitHamoreProjectModel.Store.sp_upgraddiagrams" />
-          <EntitySetMapping Name="RegistrationToRoute_Tbl">
-            <EntityTypeMapping TypeName="BeitHamoreProjectModel.RegistrationToRoute_Tbl">
-              <MappingFragment StoreEntitySet="RegistrationToRoute_Tbl">
-                <ScalarProperty Name="year" ColumnName="year" />
-                <ScalarProperty Name="studentCode" ColumnName="studentCode" />
-                <ScalarProperty Name="RouteCode" ColumnName="RouteCode" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="BeitHamoreProject2Model.Store.sp_alterdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="BeitHamoreProject2Model.Store.sp_creatediagram" />
+          <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="BeitHamoreProject2Model.Store.sp_dropdiagram" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="BeitHamoreProject2Model.Store.sp_helpdiagramdefinition" />
+          <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="BeitHamoreProject2Model.Store.sp_helpdiagrams" />
+          <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="BeitHamoreProject2Model.Store.sp_renamediagram" />
+          <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="BeitHamoreProject2Model.Store.sp_upgraddiagrams" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

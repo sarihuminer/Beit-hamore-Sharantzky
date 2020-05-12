@@ -1,12 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="BeitHamoreProject2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="CertificatesTypes_Tbl">
-    <Key>
-      <PropertyRef Name="CertificateID" />
-    </Key>
-    <Property Name="CertificateID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CertificateName" Type="nvarchar" MaxLength="50" Nullable="false" />
-  </EntityType>
   <EntityType Name="Courses_Tbl">
     <Key>
       <PropertyRef Name="courseId" />
@@ -30,13 +23,37 @@
     <Property Name="beginingDate" Type="date" Nullable="false" />
     <Property Name="endDate" Type="date" Nullable="false" />
   </EntityType>
-  <EntityType Name="RegistrationToBooklets_Tbl">
+  <EntityType Name="CourseToDomain_Tbl">
     <Key>
-      <PropertyRef Name="id" />
+      <PropertyRef Name="domainCourseId" />
     </Key>
-    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="BookletCode" Type="int" Nullable="false" />
-    <Property Name="studentCode" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="domainCourseId" Type="int" Nullable="false" />
+    <Property Name="courseId" Type="int" Nullable="false" />
+    <Property Name="domainId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DiplomaHours_Tbl">
+    <Key>
+      <PropertyRef Name="diplomaHoursId" />
+    </Key>
+    <Property Name="diplomaHoursId" Type="int" Nullable="false" />
+    <Property Name="diplomaId" Type="int" />
+    <Property Name="domainId" Type="int" Nullable="false" />
+    <Property Name="specializationId" Type="int" Nullable="false" />
+    <Property Name="numberMinHoursRequired" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Diplomas_Tbl">
+    <Key>
+      <PropertyRef Name="diplomaID" />
+    </Key>
+    <Property Name="diplomaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="diplomaName" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Domains_Tbl">
+    <Key>
+      <PropertyRef Name="domainId" />
+    </Key>
+    <Property Name="domainId" Type="int" Nullable="false" />
+    <Property Name="domainName" Type="nvarchar" MaxLength="50" Nullable="false" />
   </EntityType>
   <EntityType Name="RegistrationToCourse_Tbl">
     <Key>
@@ -52,7 +69,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="RouteCode" Type="int" Nullable="false" />
-    <Property Name="strudentCode" Type="int" Nullable="false" />
+    <Property Name="studentCode" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="year" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="registrationzationToSpeciali_Tbl">
@@ -67,11 +84,10 @@
     <Key>
       <PropertyRef Name="routeCode" />
     </Key>
-    <Property Name="routeCode" Type="int" Nullable="false" />
+    <Property Name="routeCode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="routeName" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="certificateID" Type="int" />
-    <Property Name="HoursRequired" Type="int" Nullable="false" />
-    <Property Name="HoursToConvert" Type="int" />
+    <Property Name="diplomaID" Type="int" />
+    <Property Name="img" Type="nvarchar" MaxLength="150" />
   </EntityType>
   <EntityType Name="Specialization_Tbl">
     <Key>
@@ -80,8 +96,6 @@
     <Property Name="specializationCode" Type="int" Nullable="false" />
     <Property Name="routeCode" Type="int" Nullable="false" />
     <Property Name="specializationName" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="HoursRequired" Type="int" Nullable="false" />
-    <Property Name="HoursToConvert" Type="int" />
   </EntityType>
   <EntityType Name="SpecializationsToRoutes_Tbl">
     <Key>
@@ -177,6 +191,66 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_CourseToDomain_Tbl_Courses_Tbl">
+    <End Role="Courses_Tbl" Type="Self.Courses_Tbl" Multiplicity="1" />
+    <End Role="CourseToDomain_Tbl" Type="Self.CourseToDomain_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Courses_Tbl">
+        <PropertyRef Name="courseId" />
+      </Principal>
+      <Dependent Role="CourseToDomain_Tbl">
+        <PropertyRef Name="courseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CourseToDomain_Tbl_Domains_Tbl">
+    <End Role="Domains_Tbl" Type="Self.Domains_Tbl" Multiplicity="1" />
+    <End Role="CourseToDomain_Tbl" Type="Self.CourseToDomain_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Domains_Tbl">
+        <PropertyRef Name="domainId" />
+      </Principal>
+      <Dependent Role="CourseToDomain_Tbl">
+        <PropertyRef Name="domainId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DiplomaHours_Tbl_Diplomas_Tbl">
+    <End Role="Diplomas_Tbl" Type="Self.Diplomas_Tbl" Multiplicity="0..1" />
+    <End Role="DiplomaHours_Tbl" Type="Self.DiplomaHours_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Diplomas_Tbl">
+        <PropertyRef Name="diplomaID" />
+      </Principal>
+      <Dependent Role="DiplomaHours_Tbl">
+        <PropertyRef Name="diplomaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DiplomaHours_Tbl_Domains_Tbl">
+    <End Role="Domains_Tbl" Type="Self.Domains_Tbl" Multiplicity="0..1" />
+    <End Role="DiplomaHours_Tbl" Type="Self.DiplomaHours_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Domains_Tbl">
+        <PropertyRef Name="domainId" />
+      </Principal>
+      <Dependent Role="DiplomaHours_Tbl">
+        <PropertyRef Name="diplomaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DiplomaHours_Tbl_Specialization_Tbl">
+    <End Role="Specialization_Tbl" Type="Self.Specialization_Tbl" Multiplicity="1" />
+    <End Role="DiplomaHours_Tbl" Type="Self.DiplomaHours_Tbl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Specialization_Tbl">
+        <PropertyRef Name="specializationCode" />
+      </Principal>
+      <Dependent Role="DiplomaHours_Tbl">
+        <PropertyRef Name="specializationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_RegistrationToCourse_Tbl_CourseTimes_Tbl">
     <End Role="CourseTimes_Tbl" Type="Self.CourseTimes_Tbl" Multiplicity="1" />
     <End Role="RegistrationToCourse_Tbl" Type="Self.RegistrationToCourse_Tbl" Multiplicity="*" />
@@ -213,15 +287,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Route_Tbl_CertificatesTypes_Tbl">
-    <End Role="CertificatesTypes_Tbl" Type="Self.CertificatesTypes_Tbl" Multiplicity="0..1" />
+  <Association Name="FK_Route_Tbl_Diplomas_Tbl">
+    <End Role="Diplomas_Tbl" Type="Self.Diplomas_Tbl" Multiplicity="0..1" />
     <End Role="Route_Tbl" Type="Self.Route_Tbl" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="CertificatesTypes_Tbl">
-        <PropertyRef Name="CertificateID" />
+      <Principal Role="Diplomas_Tbl">
+        <PropertyRef Name="diplomaID" />
       </Principal>
       <Dependent Role="Route_Tbl">
-        <PropertyRef Name="certificateID" />
+        <PropertyRef Name="diplomaID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -309,11 +383,44 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
   <EntityContainer Name="BeitHamoreProject2ModelStoreContainer">
-    <EntitySet Name="CertificatesTypes_Tbl" EntityType="Self.CertificatesTypes_Tbl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Courses_Tbl" EntityType="Self.Courses_Tbl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CourseTimes_Tbl" EntityType="Self.CourseTimes_Tbl" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="RegistrationToBooklets_Tbl" EntityType="Self.RegistrationToBooklets_Tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CourseToDomain_Tbl" EntityType="Self.CourseToDomain_Tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DiplomaHours_Tbl" EntityType="Self.DiplomaHours_Tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Diplomas_Tbl" EntityType="Self.Diplomas_Tbl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Domains_Tbl" EntityType="Self.Domains_Tbl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RegistrationToCourse_Tbl" EntityType="Self.RegistrationToCourse_Tbl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="RegistrationToRoute_Tbl" EntityType="Self.RegistrationToRoute_Tbl" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="registrationzationToSpeciali_Tbl" EntityType="Self.registrationzationToSpeciali_Tbl" Schema="dbo" store:Type="Tables" />
@@ -337,6 +444,26 @@
       <End Role="Teachers_Tbl" EntitySet="Teachers_Tbl" />
       <End Role="Courses_Tbl" EntitySet="Courses_Tbl" />
     </AssociationSet>
+    <AssociationSet Name="FK_CourseToDomain_Tbl_Courses_Tbl" Association="Self.FK_CourseToDomain_Tbl_Courses_Tbl">
+      <End Role="Courses_Tbl" EntitySet="Courses_Tbl" />
+      <End Role="CourseToDomain_Tbl" EntitySet="CourseToDomain_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CourseToDomain_Tbl_Domains_Tbl" Association="Self.FK_CourseToDomain_Tbl_Domains_Tbl">
+      <End Role="Domains_Tbl" EntitySet="Domains_Tbl" />
+      <End Role="CourseToDomain_Tbl" EntitySet="CourseToDomain_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DiplomaHours_Tbl_Diplomas_Tbl" Association="Self.FK_DiplomaHours_Tbl_Diplomas_Tbl">
+      <End Role="Diplomas_Tbl" EntitySet="Diplomas_Tbl" />
+      <End Role="DiplomaHours_Tbl" EntitySet="DiplomaHours_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DiplomaHours_Tbl_Domains_Tbl" Association="Self.FK_DiplomaHours_Tbl_Domains_Tbl">
+      <End Role="Domains_Tbl" EntitySet="Domains_Tbl" />
+      <End Role="DiplomaHours_Tbl" EntitySet="DiplomaHours_Tbl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DiplomaHours_Tbl_Specialization_Tbl" Association="Self.FK_DiplomaHours_Tbl_Specialization_Tbl">
+      <End Role="Specialization_Tbl" EntitySet="Specialization_Tbl" />
+      <End Role="DiplomaHours_Tbl" EntitySet="DiplomaHours_Tbl" />
+    </AssociationSet>
     <AssociationSet Name="FK_RegistrationToCourse_Tbl_CourseTimes_Tbl" Association="Self.FK_RegistrationToCourse_Tbl_CourseTimes_Tbl">
       <End Role="CourseTimes_Tbl" EntitySet="CourseTimes_Tbl" />
       <End Role="RegistrationToCourse_Tbl" EntitySet="RegistrationToCourse_Tbl" />
@@ -349,8 +476,8 @@
       <End Role="Specialization_Tbl" EntitySet="Specialization_Tbl" />
       <End Role="registrationzationToSpeciali_Tbl" EntitySet="registrationzationToSpeciali_Tbl" />
     </AssociationSet>
-    <AssociationSet Name="FK_Route_Tbl_CertificatesTypes_Tbl" Association="Self.FK_Route_Tbl_CertificatesTypes_Tbl">
-      <End Role="CertificatesTypes_Tbl" EntitySet="CertificatesTypes_Tbl" />
+    <AssociationSet Name="FK_Route_Tbl_Diplomas_Tbl" Association="Self.FK_Route_Tbl_Diplomas_Tbl">
+      <End Role="Diplomas_Tbl" EntitySet="Diplomas_Tbl" />
       <End Role="Route_Tbl" EntitySet="Route_Tbl" />
     </AssociationSet>
     <AssociationSet Name="FK_SpecializationsToRoutes_Tbl_Route_Tbl" Association="Self.FK_SpecializationsToRoutes_Tbl_Route_Tbl">

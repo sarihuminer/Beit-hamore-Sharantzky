@@ -20,6 +20,8 @@ export class VRoutesComponent implements OnInit {
   constructor(private routesService: RouteService,private DomSanitizer: DomSanitizer, private router: Router) { }
 
   ngOnInit() {
+    debugger;
+    console.log('הגיע למסלולים 1');
     this.routesService.getAllRoutes().subscribe(res => {
      if (res)
        this.routes = res;

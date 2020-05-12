@@ -18,7 +18,21 @@ namespace BLL
             }
         }
 
-        
-        
+        //public static List<RouteDTO> GetUserRoutes(string tz)
+        //{
+        //    using (BeitHamoreProjectEntities db = new BeitHamoreProjectEntities())
+        //    {
+        //        List<RegistrationToRoute_Tbl> routesR = db.RegistrationToRoute_Tbl.Where(rr => rr.studentCode == tz).ToList();
+                    
+        //       List<Route_Tbl> listRoutesTbl = db.Route_Tbl.Where(
+        //         r =>
+        //         db.RegistrationToRoute_Tbl.FirstOrDefault(
+        //             rtr => rtr.studentCode == tz 
+        //             ).RouteCode == r.routeCode
+        //             ).ToList();
+
+        //        return RoutesDTOConverssion.ConvertRoutesTblToDTO(listRoutesTbl);
+        //    }
+        //}
     }
 }

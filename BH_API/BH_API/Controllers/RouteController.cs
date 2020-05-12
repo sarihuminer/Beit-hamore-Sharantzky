@@ -20,6 +20,13 @@ namespace BH_API.Controllers
             {
                 return Ok(RouteBLL.GetAllRoutes());
             }
-        
+        //[HttpGet]
+        //[Route("getRautesByUser/{tz}")]
+        //public IHttpActionResult GetRautesByUser([FromUri]string tz)
+        //{
+        //    return Ok(RouteBLL.GetUserRoutes(tz));
+        //}
+
+
     }
 }

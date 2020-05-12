@@ -15,4 +15,4 @@ export class SpealitationService {
     return this.http.get(environment.url+this.perfix_url+"/getSpealizettionbyRouteCode/"+routeid)
   }
 
-}
+}0
