@@ -18,6 +18,7 @@ import { VRoutesComponent } from './components/courses/v-routes/v-routes.compone
 import { VSpecializationComponent } from './components/courses/v-specialization/v-specialization.component';
 import { VCoursesComponent } from './components/courses/v-courses/v-courses.component';
 import { RegistrationToStudyComponent } from './components/users/registration-to-study/registration-to-study.component';
+import { TryAcGComponent } from './components/try-ac-g/try-ac-g.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { RegistrationToStudyComponent } from './components/users/registration-to
     VSpecializationComponent,
     VCoursesComponent,
     RegistrationToStudyComponent,
+    TryAcGComponent,
   ],
   imports: [
   //  MaterialModule.forRoot(),

@@ -1,27 +1,29 @@
-<div dir="rtl" class="example-container " >
+<div dir="rtl" class="example-container ">
   <h1 dir="rtl">ברוכה הבאה {{name}}</h1>
-  <form dir="rtl" class="example-container" [formGroup]="options">
+  <form dir="rtl" class="example-container">
     <div>
       <label> בחרי</label>
       <mat-radio-group aria-label="Select an option">
         <mat-radio-button value="1">למודי תעודה</mat-radio-button>
         <mat-radio-button value="2">הרשמה לקורסים</mat-radio-button>
       </mat-radio-group>
-     
+
     </div>
-     <!-- choosing route -->
+    <!-- choosing route -->
   </form>
   <mat-form-field class="example-full-width">
-    <input type="text" placeholder="בחרי מסלול" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
-    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-      <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-        {{option}}
+    <input type="text" placeholder="בחרי מסלול" aria-label="Number" matInput [formControl]="routesControl"
+      [matAutocomplete]="autoRoute">
+    <mat-autocomplete #autoRoute="matAutocomplete">
+      <mat-option *ngFor="let option of filteredRoutes | async" [value]="option.routeCode">
+        {{option.routeName}}
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
-    <!-- choosing spealitiozation -->
+  <!-- choosing spealitiozation -->
   <mat-form-field class="example-full-width">
-    <input type="text" placeholder="בחרי התמחות" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
+    <input type="text" placeholder="בחרי התמחות" aria-label="Number" matInput [formControl]="myControl"
+      [matAutocomplete]="auto">
     <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
       <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
         {{option}}
@@ -29,56 +31,54 @@
     </mat-autocomplete>
   </mat-form-field>
   <!-- Favorite day  -->
-  <mat-form-field
-      [hideRequiredMarker]="options.value.hideRequired"
-      [floatLabel]="options.value.floatLabel">
+  <mat-form-field>
     <mat-select required>
       <mat-option>-- None --</mat-option>
       <mat-option value="option">Option</mat-option>
     </mat-select>
-    <mat-label><mat-icon>favorite</mat-icon> <b> יום מועדף</b><i> לא חובה</i></mat-label>
+    <mat-label>
+      <mat-icon>favorite</mat-icon> <b> יום מועדף</b><i> לא חובה</i>
+    </mat-label>
   </mat-form-field>
-<!-- favorite apeaker -->
-  <mat-form-field
-  [hideRequiredMarker]="options.value.hideRequired"
-  [floatLabel]="options.value.floatLabel">
-<mat-select required>
-  <mat-option>-- None --</mat-option>
-  <mat-option value="option">Option</mat-option>
-</mat-select>
-<mat-label><mat-icon>favorite</mat-icon> <b> מרצה מוכר</b> <i> לא חובה</i></mat-label>
-</mat-form-field>
-<!-- favorite time -->
-<mat-form-field
-[hideRequiredMarker]="options.value.hideRequired"
-[floatLabel]="options.value.floatLabel">
-<mat-select required>
-<mat-option>-- None --</mat-option>
-<mat-option value="option">Option</mat-option>
-</mat-select>
-<mat-label><mat-icon>favorite</mat-icon> <b>  שעות נוחות</b> <i> לא חובה</i></mat-label>
-</mat-form-field>
-<!-- total houers -->
-<mat-form-field
-[hideRequiredMarker]="options.value.hideRequired"
-[floatLabel]="options.value.floatLabel">
-<mat-select required>
-<mat-option>-- None --</mat-option>
-<mat-option value="option">Option</mat-option>
-</mat-select>
-<mat-label><mat-icon>favorite</mat-icon> <b>שעות צבירה</b> <i> לא חובה</i></mat-label>
-</mat-form-field>
+  <!-- favorite apeaker -->
+  <mat-form-field>
+    <mat-select required>
+      <mat-option>-- None --</mat-option>
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+    <mat-label>
+      <mat-icon>favorite</mat-icon> <b> מרצה מוכר</b> <i> לא חובה</i>
+    </mat-label>
+  </mat-form-field>
+  <!-- favorite time -->
+  <mat-form-field>
+    <mat-select required>
+      <mat-option>-- None --</mat-option>
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+    <mat-label>
+      <mat-icon>favorite</mat-icon> <b> שעות נוחות</b> <i> לא חובה</i>
+    </mat-label>
+  </mat-form-field>
+  <!-- total houers -->
+  <mat-form-field>
+    <mat-select required>
+      <mat-option>-- None --</mat-option>
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+    <mat-label>
+      <mat-icon>favorite</mat-icon> <b>שעות צבירה</b> <i> לא חובה</i>
+    </mat-label>
+  </mat-form-field>
 
-<!-- total dades -->
-<mat-form-field
-[hideRequiredMarker]="options.value.hideRequired"
-[floatLabel]="options.value.floatLabel">
-<mat-select required>
-<mat-option>-- None --</mat-option>
-<mat-option value="option">Option</mat-option>
-</mat-select>
-<mat-label><mat-icon>favorite</mat-icon> <b> החל מתאריך  </b> <i> לא חובה</i></mat-label>
-</mat-form-field>
+  <!-- total dades -->
+  <mat-form-field>
+    <mat-select required>
+      <mat-option>-- None --</mat-option>
+      <mat-option value="option">Option</mat-option>
+    </mat-select>
+    <mat-label>
+      <mat-icon>favorite</mat-icon> <b> החל מתאריך </b> <i> לא חובה</i>
+    </mat-label>
+  </mat-form-field>
 </div>
-
-
