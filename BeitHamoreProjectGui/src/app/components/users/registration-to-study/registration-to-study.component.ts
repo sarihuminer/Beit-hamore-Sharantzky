@@ -24,6 +24,8 @@ import { Observable } from 'rxjs';
   styleUrls: ['./registration-to-study.component.css']
 })
 export class RegistrationToStudyComponent implements OnInit {
+  response: UserGlobalDetailsDTO;
+  routeId: Route;
   routes: Route[] = [];
   userDetails: UserDetails = new UserDetails();
   spealization: Specialization[] = [];
@@ -43,7 +45,7 @@ export class RegistrationToStudyComponent implements OnInit {
   constructor(private registerToStudyService: RegisterToStudyService, private userService: UserService, private routeService: RouteService, private DomSanitizer: DomSanitizer, private router: Router) { }
 
   private _filter(value: string): string[] {
-    debugger;
+
     const filterValue = value.toLowerCase();
 
     return this.options2.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
@@ -56,9 +58,15 @@ export class RegistrationToStudyComponent implements OnInit {
 
     return this.routes.filter(option => option.routeName.toLowerCase().indexOf(filterValue) === 0);
   }
+  // private _filterR(value: string): Route[] {
+  //   debugger;
+  //   const filterValue = value.toLowerCase();
+
+  //   return this.routes.filter(option => option.routeName.toLowerCase().indexOf(filterValue) === 0);
+  // }
   ngOnInit() {
 
-    debugger;
+
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
       map(value => this._filter(value))
@@ -80,7 +88,14 @@ export class RegistrationToStudyComponent implements OnInit {
     );
     this.registerToStudyService.GetglobalDetailsUser(localStorage.getItem("currentUserTz")).subscribe(res => {
       if (res) {
+        this.response = res;
+        debugger;
+        console.log(this.response);
         this.routes = res.ListRoutes;
+        console.log(this.routes[0].routeCode)
+        console.log(this.routes[0].diplomaID)
+        console.log(this.routes[0].img)
+        console.log(this.routes[0].routeName)
         this.courses = res.ListCourses;
         this.spealization = res.ListSpealitation;
         this.userDetails = res.UserDetails;
@@ -88,7 +103,12 @@ export class RegistrationToStudyComponent implements OnInit {
       }
     }, err => console.log(err))
   }
+  try() {
+    this.routes.forEach(element => {
+      console.log(element.routeName);
+    });
 
+  }
   //   {
   // this.routes=this.routeService.getRautes(this.user).subscribe(res=>
   // {

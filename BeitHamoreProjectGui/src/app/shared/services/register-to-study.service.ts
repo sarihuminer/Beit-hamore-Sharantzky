@@ -10,8 +10,8 @@ import { UserGlobalDetailsDTO } from '../models/UserGlobalDetails.model';
 })
 export class RegisterToStudyService {
   perfix_url = "registerToRoutes/";
-  GetglobalDetailsUser(tz: string):Observable<UserGlobalDetailsDTO> {
-        return this.http.get<UserGlobalDetailsDTO>(environment.url+this.perfix_url+"GetglobalDetailsUser/"+tz) ;
-    }
-    constructor(private http: HttpClient) { }
+  GetglobalDetailsUser(tz: string): Observable<UserGlobalDetailsDTO> {
+    return this.http.get<UserGlobalDetailsDTO>(environment.url + this.perfix_url + "GetglobalDetailsUser/" + tz);
+  }
+  constructor(private http: HttpClient) { }
 }

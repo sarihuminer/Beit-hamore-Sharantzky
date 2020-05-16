@@ -11,12 +11,14 @@
     </div>
     <!-- choosing route -->
   </form>
-  <mat-form-field class="example-full-width">
-    <input type="text" placeholder="בחרי מסלול" aria-label="Number" matInput [formControl]="routesControl"
-      [matAutocomplete]="autoRoute">
+
+
+  <mat-form-field class="example-full-width" *ngIf="response && response.ListRoutes.length > 0">
+    <input type="text" class="ng-trim-ignore" [(ngModel)]="routeId" placeholder="בחרי מסלול" aria-label="Number"
+      matInput [matAutocomplete]="autoRoute" [formControl]="routesControl">
     <mat-autocomplete #autoRoute="matAutocomplete">
-      <mat-option *ngFor="let option of filteredRoutes | async" [value]="option.routeCode">
-        {{option.routeName}}
+      <mat-option *ngFor="let r of response.ListRoutes" [value]="r.routeName">
+        {{r.routeName}}
       </mat-option>
     </mat-autocomplete>
   </mat-form-field>
@@ -81,4 +83,8 @@
       <mat-icon>favorite</mat-icon> <b> החל מתאריך </b> <i> לא חובה</i>
     </mat-label>
   </mat-form-field>
+
+  <p *ngIf="routeId">{{routeId.routeName}}</p>
+
+  <button style="height: 12px;width: 5px;" (click)="try()"></button>
 </div>
