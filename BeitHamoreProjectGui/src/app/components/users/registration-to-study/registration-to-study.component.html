@@ -17,7 +17,7 @@
     <input type="text" class="ng-trim-ignore" [(ngModel)]="routeId" placeholder="בחרי מסלול" aria-label="Number"
       matInput [matAutocomplete]="autoRoute" [formControl]="routesControl">
     <mat-autocomplete #autoRoute="matAutocomplete">
-      <mat-option *ngFor="let r of response.ListRoutes" [value]="r.routeName">
+      <mat-option *ngFor="let r of response.ListRoutes" [value]="r.routeName" (click)="selectedRoute(r)">
         {{r.routeName}}
       </mat-option>
     </mat-autocomplete>

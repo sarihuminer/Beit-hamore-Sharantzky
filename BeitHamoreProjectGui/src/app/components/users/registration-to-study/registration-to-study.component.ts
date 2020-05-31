@@ -109,6 +109,9 @@ export class RegistrationToStudyComponent implements OnInit {
     });
 
   }
+  selectedRoute(r: Route) {
+    console.log(r.routeCode);
+  }
   //   {
   // this.routes=this.routeService.getRautes(this.user).subscribe(res=>
   // {
